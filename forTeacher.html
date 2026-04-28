@@ -1,0 +1,1559 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2026-04-28 Tue 12:54 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>和 AI 作朋友——高中生的 AI 工具箱</title>
+<meta name="author" content="臺南一中 顏永進" />
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<link rel="stylesheet" type="text/css" href="../../css/muse.css" />
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">和 AI 作朋友——高中生的 AI 工具箱
+<br />
+<span class="subtitle">雲林場高中生 AI 工作坊</span>
+</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org8c62af5">1. 破題（5 min）</a>
+<ul>
+<li><a href="#org2089219">1.1. 本日目標：重新定義「AI 能幫你做什麼」</a></li>
+<li><a href="#orgf9a8107">1.2. 今天的主線：用 AI 做一份台灣史學習歷程</a></li>
+<li><a href="#orgdce9966">1.3. 為什麼選這個主題？</a></li>
+<li><a href="#org381b8e2">1.4. AI 使用的三個層次</a></li>
+</ul>
+</li>
+<li><a href="#org0506dfa">2. 工具總覽</a></li>
+<li><a href="#orgc13be31">3. 第一段：AI 能幫你「讀」（20 min）</a>
+<ul>
+<li><a href="#orgc6417ab">3.1. Step 0｜破題引子（現場口說，30 秒）</a></li>
+<li><a href="#orgbee4226">3.2. Step 1｜先問 ChatGPT：展示 Lv.1 的極限（2 min）</a></li>
+<li><a href="#orgfb4da6d">3.3. Step 2｜NotebookLM：餵素材、問問題（10 min）</a></li>
+<li><a href="#org71d8885">3.4. 延伸示範：不同來源交叉比對</a></li>
+<li><a href="#orgb91532b">3.5. 選題：想不到題目的話，從這裡挑一個</a></li>
+<li><a href="#org82a14ba">3.6. 學生產出</a></li>
+<li><a href="#org8a7eb0c">3.7. 關鍵觀念</a></li>
+</ul>
+</li>
+<li><a href="#org5f21061">4. 第二段：AI 能幫你「做」（25 min）</a>
+<ul>
+<li><a href="#org4a46e95">4.1. Step 3｜Napkin：畫一張「為什麼是雲林」因果關係圖（3 min）</a></li>
+<li><a href="#org9c9b7d1">4.2. Step 4｜Claude 免費版：組裝成小論文格式的 Word（10 min）</a></li>
+<li><a href="#org502326a">4.3. 學生實作</a></li>
+<li><a href="#orga3bb6e8">4.4. 關鍵觀念</a></li>
+</ul>
+</li>
+<li><a href="#org1dd99d7">5. 第三段：AI 能幫你「學」（20 min）</a>
+<ul>
+<li><a href="#org2702279">5.1. Step 5｜prompt 三招就夠用：給角色、給範例、給限制</a></li>
+<li><a href="#orge6061eb">5.2. Step 6｜寫作教練 Demo：用 AI 改反思，不是用 AI 寫反思</a></li>
+<li><a href="#orgf52584e">5.3. 改完反思，更新進 Word</a></li>
+<li><a href="#org3698168">5.4. 學生實作</a></li>
+<li><a href="#orgcf1156e">5.5. 關鍵觀念</a></li>
+</ul>
+</li>
+<li><a href="#org2b38b06">6. 第四段：做簡報（15 min）</a>
+<ul>
+<li><a href="#orgb32f22c">6.1. Step 7｜Gamma 或 Claude：用 Word 內容生成投影片</a></li>
+<li><a href="#orgb6d6f7a">6.2. 學生實作</a></li>
+<li><a href="#orgc8d055b">6.3. 關鍵觀念</a></li>
+</ul>
+</li>
+<li><a href="#orgdba3c1d">7. 第五段：AI 能幫你「創造」（20 min）</a>
+<ul>
+<li><a href="#orgfd24ae9">7.1. Claude Code / Gemini CLI Demo（重頭戲）</a></li>
+<li><a href="#orgd9ff481">7.2. Agent 串接壓軸：一句話跑完「分析→產出→發佈」</a></li>
+<li><a href="#orgc57bb0c">7.3. 檔案整理：讓 AI 動手收你的爛攤子</a></li>
+<li><a href="#org9ebd2e1">7.4. Ideogram Demo：專題封面圖</a></li>
+<li><a href="#org020dfda">7.5. 學生實作</a></li>
+<li><a href="#org88eac07">7.6. 關鍵觀念</a></li>
+</ul>
+</li>
+<li><a href="#org04cc260">8. 第六段：AI 到底怎麼辦到的？（15 min）</a>
+<ul>
+<li><a href="#orgf4a3e69">8.1. AI 的本質是「函數」</a></li>
+<li><a href="#orgc9af450">8.2. 生成式 AI 是「會接龍的函數」</a></li>
+<li><a href="#org141698c">8.3. Token：AI 眼中的世界</a></li>
+<li><a href="#orge8e9d6c">8.4. 訓練三階段</a></li>
+<li><a href="#orgae424ec">8.5. 幻覺（Hallucination）——回到主線的警鐘</a></li>
+<li><a href="#orgfd01ea9">8.6. 另一條紅線：什麼東西不該丟雲端</a></li>
+</ul>
+</li>
+<li><a href="#org26e16c3">9. 收尾（5 min）</a>
+<ul>
+<li><a href="#org0051120">9.1. 你手上現在有什麼？</a></li>
+<li><a href="#org903e7f7">9.2. 三個帶走的觀念</a></li>
+<li><a href="#org7094b5f">9.3. 下一步：往 Lv.4 走</a></li>
+</ul>
+</li>
+<li><a href="#org538845f">10. 附錄：工具準備清單</a></li>
+<li><a href="#org392557d">11. 附錄：NotebookLM 素材——請把以下連結存成 PDF 後上傳</a>
+<ul>
+<li><a href="#org66f90c0">11.1. 主要素材（建議三份都上傳）</a></li>
+<li><a href="#org0f10858">11.2. 補充素材（進階探索用）</a></li>
+</ul>
+</li>
+<li><a href="#org1e09faf">12. 附錄：小論文格式規範（貼給 Claude 用）</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8c62af5" class="outline-2">
+<h2 id="org8c62af5"><span class="section-number-2">1.</span> 破題（5 min）</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>「AI 不是未來的事，是現在的事。問題不是要不要用，而是你會不會用。」</li>
+<li>「還在 prompt-copy-paste？今天帶你看真正的玩法。」</li>
+</ul>
+</div>
+<div id="outline-container-org2089219" class="outline-3">
+<h3 id="org2089219"><span class="section-number-3">1.1.</span> 本日目標：重新定義「AI 能幫你做什麼」</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>把 AI 當「同事」，不是當「字典」</li>
+<li>字典：你問一個字、它給你一個解釋（Lv.1）</li>
+<li>同事：你說「下週要交報告」，它幫你規劃、產出、修改（Lv.3）</li>
+<li>今天的目標：學會怎麼「交辦」</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf9a8107" class="outline-3">
+<h3 id="orgf9a8107"><span class="section-number-3">1.2.</span> 今天的主線：用 AI 做一份台灣史學習歷程</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+整場工作坊圍繞一個主題貫穿到底：*為什麼日本人選雲林蓋糖廠？*
+</p>
+
+<p>
+結束時，每個人帶走一份 <b>真的可以上傳</b> 的學習歷程成品：
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">階段</th>
+<th scope="col" class="org-left">你做了什麼</th>
+<th scope="col" class="org-left">帶走的東西</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">讀</td>
+<td class="org-left">用 NotebookLM 消化糖業史料</td>
+<td class="org-left">選題方向 + 核心觀念筆記</td>
+</tr>
+
+<tr>
+<td class="org-left">做</td>
+<td class="org-left">用 Napkin 生圖 + Claude 生 Word</td>
+<td class="org-left">一份小論文格式的 .docx 初稿</td>
+</tr>
+
+<tr>
+<td class="org-left">學</td>
+<td class="org-left">用 ChatGPT 當教練改反思</td>
+<td class="org-left">一段有深度的反思文字，更新進 Word</td>
+</tr>
+
+<tr>
+<td class="org-left">簡報</td>
+<td class="org-left">用 Gamma 或 Claude 做投影片</td>
+<td class="org-left">一份課程學習成果簡報</td>
+</tr>
+
+<tr>
+<td class="org-left">創造</td>
+<td class="org-left">用 AI Agent 做互動網頁（加分）</td>
+<td class="org-left">一個可展示的糖業史時間軸網站</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+每一段的產出直接疊進下一段。
+</p>
+</div>
+</div>
+<div id="outline-container-orgdce9966" class="outline-3">
+<h3 id="orgdce9966"><span class="section-number-3">1.3.</span> 為什麼選這個主題？</h3>
+<div class="outline-text-3" id="text-1-3">
+<ul class="org-ul">
+<li>你現在人在雲林——虎尾糖廠就在隔壁，有人去過嗎？</li>
+<li>108課綱歷史第一冊第五章「拚經濟與求生存的人們」，日治時期的產業發展就在考試範圍裡</li>
+<li>在地題材寫進學習歷程，跟別人的撞題率低，審查委員會記得你</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org381b8e2" class="outline-3">
+<h3 id="org381b8e2"><span class="section-number-3">1.4.</span> AI 使用的三個層次</h3>
+<div class="outline-text-3" id="text-1-4">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">階段</th>
+<th scope="col" class="org-left">做法</th>
+<th scope="col" class="org-left">代表工具</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Lv.1 問答機</td>
+<td class="org-left">prompt → copy → paste</td>
+<td class="org-left">ChatGPT 網頁版</td>
+</tr>
+
+<tr>
+<td class="org-left">Lv.2 整合工作流</td>
+<td class="org-left">AI 直接嵌在你的工具裡</td>
+<td class="org-left">Copilot、NotebookLM</td>
+</tr>
+
+<tr>
+<td class="org-left">Lv.3 AI Agent</td>
+<td class="org-left">AI 自己規劃步驟、操作電腦完成任務</td>
+<td class="org-left">Claude Code、Gemini CLI</td>
+</tr>
+
+<tr>
+<td class="org-left">Lv.4 專屬助理</td>
+<td class="org-left">你訓練它記得你的偏好，愈用愈順手</td>
+<td class="org-left">Skills / MCP（2026 起飛）</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+大部分人卡在 Lv.1，所以寫出來的東西又累又像罐頭。今天直接跳到 Lv.3，並在收尾「點到」Lv.4——讓你知道，AI 還會繼續長，現在學的是「怎麼跟它一起長」。
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org0506dfa" class="outline-2">
+<h2 id="org0506dfa"><span class="section-number-2">2.</span> 工具總覽</h2>
+<div class="outline-text-2" id="text-2">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">順序</th>
+<th scope="col" class="org-left">工具</th>
+<th scope="col" class="org-left">今天怎麼用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">1</td>
+<td class="org-left">NotebookLM</td>
+<td class="org-left">餵素材、問問題、產出研究筆記</td>
+</tr>
+
+<tr>
+<td class="org-right">2</td>
+<td class="org-left">Napkin</td>
+<td class="org-left">畫因果關係圖 / 流程圖</td>
+</tr>
+
+<tr>
+<td class="org-right">3</td>
+<td class="org-left">Claude（網頁版）</td>
+<td class="org-left">組裝成小論文格式的 Word 檔</td>
+</tr>
+
+<tr>
+<td class="org-right">4</td>
+<td class="org-left">ChatGPT</td>
+<td class="org-left">當教練改反思，改完更新進 Word</td>
+</tr>
+
+<tr>
+<td class="org-right">5</td>
+<td class="org-left">Gamma 或 Claude</td>
+<td class="org-left">用 Word 內容生成報告簡報</td>
+</tr>
+
+<tr>
+<td class="org-right">6</td>
+<td class="org-left">Claude Code（加分）</td>
+<td class="org-left">做一個糖業史互動時間軸網站</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-orgc13be31" class="outline-2">
+<h2 id="orgc13be31"><span class="section-number-2">3.</span> 第一段：AI 能幫你「讀」（20 min）</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+<b>場景：你想寫一份台灣史的課程學習成果，但三份史料根本還沒消化</b>
+</p>
+</div>
+<div id="outline-container-orgc6417ab" class="outline-3">
+<h3 id="orgc6417ab"><span class="section-number-3">3.1.</span> Step 0｜破題引子（現場口說，30 秒）</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+「虎尾糖廠 1906 年蓋的，是當時東洋最大的糖廠。但你有沒有想過——全台灣這麼多地方，日本人為什麼偏偏選雲林？不是台南、不是高雄、不是屏東，是雲林。為什麼？」
+</p>
+</div>
+</div>
+<div id="outline-container-orgbee4226" class="outline-3">
+<h3 id="orgbee4226"><span class="section-number-3">3.2.</span> Step 1｜先問 ChatGPT：展示 Lv.1 的極限（2 min）</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+現場打開 ChatGPT，直接問：
+</p>
+
+<blockquote>
+<p>
+日本人為什麼選擇在雲林虎尾蓋糖廠？
+</p>
+</blockquote>
+
+<p>
+ChatGPT 會給一個看起來不錯的回答（氣候、土地之類的），但：
+</p>
+<ul class="org-ul">
+<li>可能混入不正確的細節（幻覺）</li>
+<li>不會提到「戊戌大水災」這個關鍵事件</li>
+<li>沒有引用來源，你不知道哪句話是真的</li>
+</ul>
+
+<p>
+「這就是 Lv.1——你問一個問題，它給你一個答案，但你沒辦法驗證。接下來我們用 Lv.2 的方式。」
+</p>
+</div>
+</div>
+<div id="outline-container-orgfb4da6d" class="outline-3">
+<h3 id="orgfb4da6d"><span class="section-number-3">3.3.</span> Step 2｜NotebookLM：餵素材、問問題（10 min）</h3>
+<div class="outline-text-3" id="text-3-3">
+<p>
+事前已上傳的素材：
+</p>
+<ol class="org-ol">
+<li><a href="https://zh.wikipedia.org/zh-tw/%E8%87%BA%E7%81%A3%E7%B3%96%E6%A5%AD%E5%8F%B2">臺灣糖業史——維基百科</a></li>
+<li><a href="https://vocus.cc/article/6667e00efd89780001a6eb91">臺灣「糖都」之父——虎尾糖廠</a></li>
+<li><a href="https://www.twcenter.org.tw/wp-content/uploads/2015/05/g02_07_02_05.pdf">近代產業——雲林糖業的興衰（楊彥騏）</a></li>
+<li><a href="https://www.taisugar.com.tw/chinese/Attractions_detail.aspx?n=10048&amp;s=69&amp;p=0">虎尾糖廠製糖工場——台糖官網</a></li>
+</ol>
+
+<p>
+更多素材見附錄「NotebookLM 素材」，共 13 份，學生可自行加入感興趣的文獻。
+</p>
+
+<p>
+現場依序問四個問題：
+</p>
+
+<blockquote>
+<p>
+第一問（大方向）：根據這些資料，日本人為什麼選擇在雲林虎尾設立糖廠？有哪些關鍵因素？
+</p>
+</blockquote>
+
+<blockquote>
+<p>
+第二問（追細節）：戊戌大水災跟糖廠設立的關係是什麼？請引用原文說明。
+</p>
+</blockquote>
+
+<blockquote>
+<p>
+第三問（比較）：同一時期台灣其他地方也有糖廠，虎尾糖廠跟橋頭糖廠比起來，設廠條件有什麼不同？
+</p>
+</blockquote>
+
+<blockquote>
+<p>
+第四問（學習歷程切入）：如果我要寫一篇小論文，題目是「為什麼是雲林？——日本人在虎尾蓋糖廠的五個原因」，你建議我的大綱怎麼寫？
+</p>
+</blockquote>
+
+<p>
+問完之後，不要一個一個複製——請 NotebookLM 自己打包：
+</p>
+
+<blockquote>
+<p>
+請把我們剛才所有對話的內容整合成一份「研究筆記」，格式如下：
+</p>
+
+<p>
+一、研究問題：為什麼日本人選擇在雲林虎尾蓋糖廠？
+二、關鍵發現：列出所有重要事實，每一點後面標明出處（來源文件名稱），例如：「1897 年戊戌大水災沖出大量溪埔地（出處：楊彥騏，〈近代產業——雲林糖業的興衰〉）」
+三、比較分析：虎尾 vs. 其他糖廠的差異
+四、建議大綱：小論文的章節架構
+五、參考資料清單：列出所有引用過的文件名稱與作者
+</p>
+</blockquote>
+
+<p>
+→ NotebookLM 會把前面所有零碎的問答，整合成一份完整的研究筆記
+→ <b>只要複製這一份</b> ，就是等一下餵給 Claude 生成 Word 的全部素材
+</p>
+</div>
+</div>
+<div id="outline-container-org71d8885" class="outline-3">
+<h3 id="org71d8885"><span class="section-number-3">3.4.</span> 延伸示範：不同來源交叉比對</h3>
+<div class="outline-text-3" id="text-3-4">
+<ul class="org-ul">
+<li>四份資料的觀點不一樣：維基偏結構、vocus 偏故事、楊彥騏偏在地、台糖偏官方</li>
+<li>問 NotebookLM：「這幾份資料對虎尾糖廠設廠原因的描述有什麼差異？」</li>
+<li>展示 AI 整合多來源的能力——這才是 Lv.2 的用法，不是單純問一個問題</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb91532b" class="outline-3">
+<h3 id="orgb91532b"><span class="section-number-3">3.5.</span> 選題：想不到題目的話，從這裡挑一個</h3>
+<div class="outline-text-3" id="text-3-5">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">編號</th>
+<th scope="col" class="org-left">題目</th>
+<th scope="col" class="org-left">建議素材</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">1</td>
+<td class="org-left">虎尾糖廠的冰為什麼特別好吃？——從一支冰棒認識糖廠還在做什麼</td>
+<td class="org-left">13, 3, 10</td>
+</tr>
+
+<tr>
+<td class="org-right">2</td>
+<td class="org-left">阿公阿嬤口中的「糖廠」是什麼樣子？——家族記憶裡的糖廠生活</td>
+<td class="org-left">4, 6, 10</td>
+</tr>
+
+<tr>
+<td class="org-right">3</td>
+<td class="org-left">那條鐵軌為什麼還在？——五分車從載甘蔗到載觀光客的故事</td>
+<td class="org-left">12, 2, 6</td>
+</tr>
+
+<tr>
+<td class="org-right">4</td>
+<td class="org-left">為什麼虎尾以前叫「糖都」？——一個小鎮怎麼變成全台最重要的糖廠</td>
+<td class="org-left">2, 4</td>
+</tr>
+
+<tr>
+<td class="org-right">5</td>
+<td class="org-left">日本人為什麼來雲林種甘蔗？——你家附近的田，一百年前可能是甘蔗園</td>
+<td class="org-left">4, 1, 11</td>
+</tr>
+
+<tr>
+<td class="org-right">6</td>
+<td class="org-left">糖廠旁邊那些舊房子該拆掉嗎？——老建築保存 vs. 蓋新東西的兩難</td>
+<td class="org-left">12, 11</td>
+</tr>
+
+<tr>
+<td class="org-right">7</td>
+<td class="org-left">一顆方糖的旅程——從田裡的甘蔗到你桌上的糖，中間經過什麼？</td>
+<td class="org-left">4, 5, 13</td>
+</tr>
+
+<tr>
+<td class="org-right">8</td>
+<td class="org-left">糖廠關了，然後呢？——虎尾糖廠現在變成什麼樣子</td>
+<td class="org-left">13, 12, 10</td>
+</tr>
+</tbody>
+</table>
+
+<ul class="org-ul">
+<li>建議素材欄的編號對應本文件附錄的素材清單</li>
+<li>也歡迎自己想題目！只要跟雲林糖業有關，都可以用 NotebookLM 裡的素材來研究</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org82a14ba" class="outline-3">
+<h3 id="org82a14ba"><span class="section-number-3">3.6.</span> 學生產出</h3>
+<div class="outline-text-3" id="text-3-6">
+<ul class="org-ul">
+<li>一份「選題方向 + 核心觀念清單」</li>
+<li>例如：選了第 4 題「為什麼虎尾以前叫糖都？」→ 核心觀念包括：大日本製糖設廠、日搾量東洋第一、鈴木藤三郎</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8a7eb0c" class="outline-3">
+<h3 id="org8a7eb0c"><span class="section-number-3">3.7.</span> 關鍵觀念</h3>
+<div class="outline-text-3" id="text-3-7">
+<ul class="org-ul">
+<li>AI 幫你消化資訊，但理解還是要靠你自己</li>
+<li>重點不是 AI 給你什麼答案，而是你會不會問出好問題</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org5f21061" class="outline-2">
+<h2 id="org5f21061"><span class="section-number-2">4.</span> 第二段：AI 能幫你「做」（25 min）</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+<b>場景：選題方向定了，要把 NotebookLM 的筆記變成一份可以交的小論文</b>
+</p>
+</div>
+<div id="outline-container-org4a46e95" class="outline-3">
+<h3 id="org4a46e95"><span class="section-number-3">4.1.</span> Step 3｜Napkin：畫一張「為什麼是雲林」因果關係圖（3 min）</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+把以下文字貼進 Napkin：
+</p>
+
+<blockquote>
+<p>
+日本選擇在雲林虎尾設立糖廠的原因：
+</p>
+<ol class="org-ol">
+<li>天災創造機會：1897 戊戌大水災沖出大量溪埔地，成為無主地，容易取得</li>
+<li>自然條件適合：雲林平原日照充足、雨量適中，甘蔗生長條件好</li>
+<li>政策推動：1902 年台灣總督府頒布糖業獎勵規則，提供設廠補助</li>
+<li>企業家眼光：鈴木藤三郎（製糖王）看中虎尾的潛力，1906 年設廠</li>
+<li>國家需求：日俄戰爭後，日本需要糖的自給自足，台灣是最近的產地</li>
+</ol>
+</blockquote>
+
+<p>
+→ Napkin 自動產出一張因果關係圖
+→ 這張圖之後放進小論文的「概念整理」段落
+</p>
+</div>
+</div>
+<div id="outline-container-org9c9b7d1" class="outline-3">
+<h3 id="org9c9b7d1"><span class="section-number-3">4.2.</span> Step 4｜Claude 免費版：組裝成小論文格式的 Word（10 min）</h3>
+<div class="outline-text-3" id="text-4-2">
+<p>
+操作流程（現場示範）：
+</p>
+<ol class="org-ol">
+<li>打開 <a href="https://claude.ai">claude.ai</a>（免費帳號即可）</li>
+<li>先貼上小論文格式規範（見本文件附錄，或直接上傳格式說明 PDF）</li>
+<li>再貼上 Step 2 NotebookLM 產出的「含出處的摘要」（有標明每個重點來自哪份文件）</li>
+<li>下指令（現場直接複製貼上）：</li>
+</ol>
+
+<blockquote>
+<p>
+請根據上面的「全國高級中等學校小論文寫作比賽格式說明」，把我提供的素材整理成一份符合格式的小論文，輸出為 Word 檔（.docx）。
+</p>
+
+<p>
+基本資訊：
+</p>
+<ul class="org-ul">
+<li>投稿類別：史地類</li>
+<li>篇名：為什麼是雲林？——日本人在虎尾蓋糖廠的五個原因</li>
+<li>作者：（我會自己填）</li>
+<li>指導老師：（我會自己填）</li>
+</ul>
+
+<p>
+大綱：
+</p>
+<ul class="org-ul">
+<li>壹、前言：我住在雲林，虎尾糖廠就在附近，一直好奇為什麼日本人選這裡蓋全台最大的糖廠</li>
+<li>貳、正文：分析五個設廠因素（天災與土地、氣候條件、政策獎勵、企業家決策、日本國家戰略），每個因素引用素材中的具體事實</li>
+<li>參、結論：雲林成為糖都不是偶然，是天災、政策、資本三者交會的結果</li>
+<li>肆、引註資料：至少列出 3 篇，不得全部來自網站</li>
+</ul>
+
+<p>
+請嚴格遵守以下格式：
+</p>
+<ul class="org-ul">
+<li>新細明體 12 級字，單行間距，邊界上下左右各留 2 公分</li>
+<li>封面頁單獨一頁、不編頁碼</li>
+<li>正文分層次：一、→（一）→ 1、→（1）</li>
+<li>每頁頁首加入篇名（10級字、置中），頁尾插入頁碼（10級字、置中）</li>
+<li>引用原文以粗體加「」標明，並標註（作者，年代）</li>
+<li>引註資料至少 3 篇，不得全部來自網站</li>
+<li>總篇幅 4-10 頁（不含封面）</li>
+<li>請根據素材中標示的出處，自動生成「肆、引註資料」段落，引註格式依照中學生網站小論文比賽規範</li>
+</ul>
+</blockquote>
+
+<ol class="org-ol">
+<li>Claude 生成 Artifact → 點「下載」→ 拿到 .docx 檔</li>
+<li>用 Word 或 Google Docs 開啟，快速瀏覽——這是初稿，反思段落還沒寫好</li>
+</ol>
+
+<p>
+也可以用 Gemini（備案）：匯出到 Google Docs → 檔案 → 下載 → Microsoft Word (.docx)
+</p>
+</div>
+</div>
+<div id="outline-container-org502326a" class="outline-3">
+<h3 id="org502326a"><span class="section-number-3">4.3.</span> 學生實作</h3>
+<div class="outline-text-3" id="text-4-3">
+<ul class="org-ul">
+<li>用 Claude 或 Gemini，把你在第一段整理出的筆記組裝成一份小論文 Word 檔</li>
+<li>下載後打開，先檢查事實：人名、年份、事件有沒有被 AI 改掉或編出來</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga3bb6e8" class="outline-3">
+<h3 id="orga3bb6e8"><span class="section-number-3">4.4.</span> 關鍵觀念</h3>
+<div class="outline-text-3" id="text-4-4">
+<ul class="org-ul">
+<li>AI 幫你產出初稿，但「你的判斷」才是學習歷程的靈魂</li>
+<li>這份 Word 還不能直接交——反思段落還是 AI 罐頭，下一段來改</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org1dd99d7" class="outline-2">
+<h2 id="org1dd99d7"><span class="section-number-2">5.</span> 第三段：AI 能幫你「學」（20 min）</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+<b>場景：Word 初稿有了，但反思段落像流水帳，一看就知道是 AI 寫的</b>
+</p>
+</div>
+<div id="outline-container-org2702279" class="outline-3">
+<h3 id="org2702279"><span class="section-number-3">5.1.</span> Step 5｜prompt 三招就夠用：給角色、給範例、給限制</h3>
+<div class="outline-text-3" id="text-5-1">
+<p>
+現場對照 Demo（同一題用兩種方式問，看差距）：
+</p>
+
+<p>
+爛 prompt：
+</p>
+<blockquote>
+<p>
+幫我寫一段關於日治糖業的學習歷程反思
+</p>
+</blockquote>
+<p>
+→ 罐頭、流水帳
+</p>
+
+<p>
+好 prompt：
+</p>
+<blockquote>
+<p>
+我住雲林，常經過虎尾糖廠，以前只覺得是一個老地方。這次研究之後才知道，原來日本人選雲林蓋糖廠不是巧合，是因為一場水災沖出了大片空地。幫我用這個「從不在意到覺得驚訝」的轉變，寫一段反思初稿。風格要像高中生自己寫的，不要太文言，300字以內。
+</p>
+</blockquote>
+<p>
+→ 有你的影子
+</p>
+
+<p>
+結論：你給 AI 多少「你的樣子」，它就回給你多少「你的樣子」
+</p>
+</div>
+</div>
+<div id="outline-container-orge6061eb" class="outline-3">
+<h3 id="orge6061eb"><span class="section-number-3">5.2.</span> Step 6｜寫作教練 Demo：用 AI 改反思，不是用 AI 寫反思</h3>
+<div class="outline-text-3" id="text-5-2">
+<ul class="org-ul">
+<li>學習歷程最難的不是報告本體，是「反思」</li>
+<li>把 Step 5 AI 生成的初稿當作起點，接著用 AI 當教練：</li>
+</ul>
+
+<blockquote>
+<p>
+這段反思只在描述我對糖廠的感覺，沒有連結到「為什麼是雲林」這個研究問題，幫我指出哪裡可以改。
+</p>
+</blockquote>
+
+<blockquote>
+<p>
+給我三種不同角度切入反思：我學到了什麼能力 / 我對家鄉的看法改變了什麼 / 這個研究讓我想繼續探索什麼
+</p>
+</blockquote>
+
+<blockquote>
+<p>
+這句話怎麼改更有力？
+</p>
+</blockquote>
+
+<ul class="org-ul">
+<li>*關鍵訊息*：AI 是逼你想清楚的教練，不是幫你寫的槍手</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf52584e" class="outline-3">
+<h3 id="orgf52584e"><span class="section-number-3">5.3.</span> 改完反思，更新進 Word</h3>
+<div class="outline-text-3" id="text-5-3">
+<ul class="org-ul">
+<li>把改好的反思文字貼回 Step 4 下載的 Word 檔，取代 AI 原本生的罐頭反思</li>
+<li>這份 Word 現在可以上傳了</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org3698168" class="outline-3">
+<h3 id="org3698168"><span class="section-number-3">5.4.</span> 學生實作</h3>
+<div class="outline-text-3" id="text-5-4">
+<ul class="org-ul">
+<li>用 AI 當教練，改你 Word 檔裡的反思段落</li>
+<li>至少跟 AI 來回三輪：寫初稿 → 請 AI 指出問題 → 你自己改 → 再請 AI 看</li>
+<li>改好後貼回 Word 檔</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgcf1156e" class="outline-3">
+<h3 id="orgcf1156e"><span class="section-number-3">5.5.</span> 關鍵觀念</h3>
+<div class="outline-text-3" id="text-5-5">
+<ul class="org-ul">
+<li>用 AI 當教練，不是當槍手</li>
+<li>學習歷程最看重的是「你的思考」，AI 幫你把思考變清晰，不是幫你生思考</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org2b38b06" class="outline-2">
+<h2 id="org2b38b06"><span class="section-number-2">6.</span> 第四段：做簡報（15 min）</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+<b>場景：Word 完成了，但老師要你上台報告，需要一份簡報</b>
+</p>
+</div>
+<div id="outline-container-orgb32f22c" class="outline-3">
+<h3 id="orgb32f22c"><span class="section-number-3">6.1.</span> Step 7｜Gamma 或 Claude：用 Word 內容生成投影片</h3>
+<div class="outline-text-3" id="text-6-1">
+<p>
+把 Word 檔的文字內容（或 Step 2 的摘要 + 改好的反思）貼進 Gamma，輸入：
+</p>
+
+<blockquote>
+<p>
+高中歷史課程學習成果報告簡報。
+標題：為什麼是雲林？——日本人在虎尾蓋糖廠的五個原因。
+內容包含：
+一、研究動機（我住雲林，糖廠就在旁邊，想知道為什麼是這裡）
+二、日本設廠的五個關鍵因素（天災、氣候、政策、企業家、國家需求）
+三、學習反思
+</p>
+</blockquote>
+
+<p>
+→ Gamma 30 秒生成簡報
+→ 現場快速改一兩張：刪掉 AI 亂加的內容、補上自己的話
+</p>
+
+<p>
+也可以用 Claude 免費版直接生成 .pptx 檔下載。
+</p>
+</div>
+</div>
+<div id="outline-container-orgb6d6f7a" class="outline-3">
+<h3 id="orgb6d6f7a"><span class="section-number-3">6.2.</span> 學生實作</h3>
+<div class="outline-text-3" id="text-6-2">
+<ul class="org-ul">
+<li>用 Gamma 或 Claude 把你的 Word 內容做成一份簡報</li>
+<li>完成後跟旁邊同學互看：「你覺得這份簡報哪裡看得出是你做的、哪裡像 AI 罐頭？」</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc8d055b" class="outline-3">
+<h3 id="orgc8d055b"><span class="section-number-3">6.3.</span> 關鍵觀念</h3>
+<div class="outline-text-3" id="text-6-3">
+<ul class="org-ul">
+<li>簡報是用來「說」的，不是用來「讀」的——每張投影片只留關鍵字，細節用嘴巴講</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgdba3c1d" class="outline-2">
+<h2 id="orgdba3c1d"><span class="section-number-2">7.</span> 第五段：AI 能幫你「創造」（20 min）</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+<b>場景：想讓你的學習歷程跟隔壁不一樣——不只是 Word 檔</b>
+</p>
+</div>
+<div id="outline-container-orgfd24ae9" class="outline-3">
+<h3 id="orgfd24ae9"><span class="section-number-3">7.1.</span> Claude Code / Gemini CLI Demo（重頭戲）</h3>
+<div class="outline-text-3" id="text-7-1">
+<p>
+現場演示，一句話下指令：
+</p>
+<ul class="org-ul">
+<li>「把這份雲林糖業報告做成一個互動時間軸網站：1906 大日本製糖設廠 → 1924 日搾量東洋第一 → 1945 戰後台糖接收 → 2000s 轉型文創園區」</li>
+<li>AI 自己建檔案 → 寫 HTML/CSS/JS → 跑起來</li>
+<li>再追加需求：「加一個小測驗：三題關於虎尾糖廠的選擇題」→ AI 自己改 code</li>
+<li>這一份互動網頁連結放進學習歷程，審查委員會記得你</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd9ff481" class="outline-3">
+<h3 id="orgd9ff481"><span class="section-number-3">7.2.</span> Agent 串接壓軸：一句話跑完「分析→產出→發佈」</h3>
+<div class="outline-text-3" id="text-7-2">
+<p>
+現場示範，用虎尾糖廠當素材：
+</p>
+<ol class="org-ol">
+<li>AI 分析糖廠的歷史脈絡、關鍵轉折點、重要人物（鈴木藤三郎、藤山雷太）</li>
+<li>產出一頁互動心得網頁（可放進學習歷程的「自主學習」）</li>
+<li>草擬一則 IG 貼文：「你知道雲林曾是全台灣最甜的地方嗎？#虎尾糖廠 #台灣史 #學習歷程」</li>
+<li>同時生成一張封面視覺（接 Ideogram：日治糖廠意象）</li>
+</ol>
+
+<p>
+一條指令，從「讀」到「寫」到「視覺」全包。
+</p>
+<ul class="org-ul">
+<li>重點不是「你要會 Agent」，而是「同樣兩小時，你能交出的東西多了三倍」</li>
+<li>紅線提醒：最後一關永遠是你——AI 交成品，掛名的是你</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc57bb0c" class="outline-3">
+<h3 id="orgc57bb0c"><span class="section-number-3">7.3.</span> 檔案整理：讓 AI 動手收你的爛攤子</h3>
+<div class="outline-text-3" id="text-7-3">
+<p>
+最容易立刻有感的場景：
+</p>
+<ul class="org-ul">
+<li>「下載」資料夾爆滿，AI 幫你按類型／日期分類</li>
+<li>手機照片亂成一片，AI 按事件改名（例：~20260315_期中考週_讀書會.jpg~）</li>
+<li>學期末把所有作業檔案按科目歸檔、改成可讀的檔名</li>
+<li>為什麼學生該會：你的學習歷程素材，平常就該被整理好；不是上傳前一晚才在翻</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9ebd2e1" class="outline-3">
+<h3 id="org9ebd2e1"><span class="section-number-3">7.4.</span> Ideogram Demo：專題封面圖</h3>
+<div class="outline-text-3" id="text-7-4">
+<ul class="org-ul">
+<li>用文字描述生成封面視覺：「日治時期台灣糖廠，五分車鐵道，甘蔗田，復古海報風格」</li>
+<li>做一張放在學習歷程報告首頁的封面圖</li>
+<li>Ideogram 特別擅長有文字標語的海報</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org020dfda" class="outline-3">
+<h3 id="org020dfda"><span class="section-number-3">7.5.</span> 學生實作</h3>
+<div class="outline-text-3" id="text-7-5">
+<ul class="org-ul">
+<li>把你前三段做出來的糖業史報告，選一個段落做成互動網頁</li>
+<li>或用 Ideogram 做一張你這份學習歷程的封面圖</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org88eac07" class="outline-3">
+<h3 id="org88eac07"><span class="section-number-3">7.6.</span> 關鍵觀念</h3>
+<div class="outline-text-3" id="text-7-6">
+<ul class="org-ul">
+<li>從 prompt-copy-paste 進化到 AI Agent——AI 自己規劃、自己執行</li>
+<li>你的學習歷程不只是文字檔，可以是互動網頁、時間軸、資訊圖表</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org04cc260" class="outline-2">
+<h2 id="org04cc260"><span class="section-number-2">8.</span> 第六段：AI 到底怎麼辦到的？（15 min）</h2>
+<div class="outline-text-2" id="text-8">
+</div>
+<div id="outline-container-orgf4a3e69" class="outline-3">
+<h3 id="orgf4a3e69"><span class="section-number-3">8.1.</span> AI 的本質是「函數」</h3>
+<div class="outline-text-3" id="text-8-1">
+<ul class="org-ul">
+<li>「你國中學過函數對不對？輸入一個值、經過規則、得到輸出。AI 做的事情一模一樣。」</li>
+<li>現場舉例：
+<ul class="org-ul">
+<li>手寫辨識：輸入圖片 → f → 輸出「這是 5」（機率 92%）</li>
+<li>貓狗辨識：輸入照片 → f → 輸出「貓 90%、狗 10%」</li>
+<li>文字生成：輸入提示詞 → f → 輸出生成的文字</li>
+</ul></li>
+<li>「不管 AI 看起來多厲害，骨子裡都是：輸入 → 函數 → 輸出」</li>
+<li>差別在於函數裡有幾千億個參數，從海量資料中「學」出來的</li>
+<li>教材參考：南大生成式AI教材【腳本】04. 函數：AI 的本質</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc9af450" class="outline-3">
+<h3 id="orgc9af450"><span class="section-number-3">8.2.</span> 生成式 AI 是「會接龍的函數」</h3>
+<div class="outline-text-3" id="text-8-2">
+<ul class="org-ul">
+<li>「那生成式 AI 是什麼樣的函數？答案：一個每次只猜下一個字的函數。」</li>
+<li>現場示範接龍過程（用 ChatGPT 的 streaming 效果）：
+<ul class="org-ul">
+<li>f(&ldquo;什麼是臺灣最美的風景？&rdquo;) → 臺</li>
+<li>f(&ldquo;什麼是臺灣最美的風景？臺&rdquo;) → 灣</li>
+<li>……依此類推</li>
+</ul></li>
+<li>「就像 LINE 鍵盤自動建議下一個字——AI 做一樣的事，只是猜得非常準」</li>
+<li>溫度參數（Temperature）：加入隨機性，同一題可能不同答案
+<ul class="org-ul">
+<li>溫度低 → 回答比較固定</li>
+<li>溫度高 → 回答比較有創意，但也比較容易出錯</li>
+</ul></li>
+<li>「這也解釋了為什麼會有幻覺——AI 不是在『回憶事實』，是在『猜下一個最可能的字』」</li>
+<li>教材參考：南大生成式AI教材【腳本】06. 生成式AI：一種會接龍的函數</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org141698c" class="outline-3">
+<h3 id="org141698c"><span class="section-number-3">8.3.</span> Token：AI 眼中的世界</h3>
+<div class="outline-text-3" id="text-8-3">
+<ul class="org-ul">
+<li>「為什麼 AI 有時候數學會算錯？因為它看到的不是數字，是這個——」</li>
+<li>用 Tokenizer 展示「虎尾糖廠」被切成什麼 token（中文斷詞特別有趣）</li>
+<li>再試「314159」——數字的 token 切法跟你想的完全不一樣</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge8e9d6c" class="outline-3">
+<h3 id="orge8e9d6c"><span class="section-number-3">8.4.</span> 訓練三階段</h3>
+<div class="outline-text-3" id="text-8-4">
+<ol class="org-ol">
+<li>*預訓練*：讀了整個網路 → 學會語言模式</li>
+<li>*微調（Fine-tuning）*：針對特定任務練習 → 學會當助理</li>
+<li>*RLHF*：人類告訴它什麼是好答案 → 學會避免有害回應</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgae424ec" class="outline-3">
+<h3 id="orgae424ec"><span class="section-number-3">8.5.</span> 幻覺（Hallucination）——回到主線的警鐘</h3>
+<div class="outline-text-3" id="text-8-5">
+<p>
+用今天的主題來抓包：
+</p>
+<ul class="org-ul">
+<li>Demo：「請描述 1920 年雲林農民組合抗議虎尾糖廠壓低甘蔗收購價格的經過」</li>
+<li>看 AI 掰出什麼：人名、日期、事件經過講得頭頭是道，但可能整段都是編的</li>
+<li>跟第一段 NotebookLM 的資料交叉比對——哪些是真的、哪些是幻覺？</li>
+<li>用 AI 出台灣史練習題，常見「四個選項都對」「答案對不上」「題幹自相矛盾」</li>
+<li>結論：AI 不是知識庫，是語言模型</li>
+<li>*給學習歷程的警告*：大學教授一年看幾千份，你掰的他看得出來</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgfd01ea9" class="outline-3">
+<h3 id="orgfd01ea9"><span class="section-number-3">8.6.</span> 另一條紅線：什麼東西不該丟雲端</h3>
+<div class="outline-text-3" id="text-8-6">
+<p>
+AI 很強，但你打進去的每一個字，理論上都會離開你的電腦。
+</p>
+<ul class="org-ul">
+<li>哪些東西要小心？
+<ul class="org-ul">
+<li>日記、心情筆記、感情問題、家裡狀況</li>
+<li>班上同學的個資、輔導紀錄、申訴內容</li>
+<li>還沒公開的競賽作品、原創小說、專題點子</li>
+</ul></li>
+<li>進階解法（點到為止）：本機 AI（例：ollama + 開源模型）
+<ul class="org-ul">
+<li>跑在你自己的筆電上，資料完全不外流</li>
+<li>效能比雲端弱，但夠用來改作文、整理日記</li>
+</ul></li>
+<li>一個判準：「這段話如果被截圖貼到網路上，我會崩潰嗎？」會 → 別丟雲端</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org26e16c3" class="outline-2">
+<h2 id="org26e16c3"><span class="section-number-2">9.</span> 收尾（5 min）</h2>
+<div class="outline-text-2" id="text-9">
+</div>
+<div id="outline-container-org0051120" class="outline-3">
+<h3 id="org0051120"><span class="section-number-3">9.1.</span> 你手上現在有什麼？</h3>
+<div class="outline-text-3" id="text-9-1">
+<p>
+把今天做的東西攤開——全部圍繞同一個主題：
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">階段</th>
+<th scope="col" class="org-left">成品</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">讀</td>
+<td class="org-left">NotebookLM 研究筆記 + 選題方向</td>
+</tr>
+
+<tr>
+<td class="org-left">做</td>
+<td class="org-left">Napkin 因果關係圖 + Claude 小論文 Word 初稿</td>
+</tr>
+
+<tr>
+<td class="org-left">學</td>
+<td class="org-left">跟 AI 來回三輪改出來的反思，貼回 Word 完成定稿</td>
+</tr>
+
+<tr>
+<td class="org-left">簡報</td>
+<td class="org-left">Gamma 或 Claude 生成的報告簡報</td>
+</tr>
+
+<tr>
+<td class="org-left">創造</td>
+<td class="org-left">一個互動時間軸網頁 + 一張 Ideogram 封面圖（加分）</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+三小時前你還在煩惱學習歷程怎麼寫，現在你手上有一份 Word + 一份簡報 + 一個互動網頁。
+</p>
+</div>
+</div>
+<div id="outline-container-org903e7f7" class="outline-3">
+<h3 id="org903e7f7"><span class="section-number-3">9.2.</span> 三個帶走的觀念</h3>
+<div class="outline-text-3" id="text-9-2">
+<ol class="org-ol">
+<li><b>AI 讓你的產出品質升級，不是代寫</b> ——你做過的事，AI 幫你加速表達</li>
+<li><b>從使用者升級成駕馭者</b> ——學會整合 AI 進你的工作流</li>
+<li><b>審查委員要看的不是 AI，是你</b> ——你的判斷力就是你的價值</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org7094b5f" class="outline-3">
+<h3 id="org7094b5f"><span class="section-number-3">9.3.</span> 下一步：往 Lv.4 走</h3>
+<div class="outline-text-3" id="text-9-3">
+<ul class="org-ul">
+<li>今天教的是 Lv.1→Lv.3：你下指令，AI 動手</li>
+<li>Lv.4 正在發生（2026 起）：AI 記得你的偏好、你的寫作風格、你常用的格式</li>
+<li>例如：訓練一個「我的學習歷程助理」，它知道你哪些科目、什麼風格、上一份報告做到哪</li>
+<li>*本場不展開*，但你要知道——今天學的不是「終點」，是「起點」</li>
+<li>回家作業（給有興趣的人）：去看一下 Anthropic Skills、ChatGPT Custom GPT，挑一個試試看</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org538845f" class="outline-2">
+<h2 id="org538845f"><span class="section-number-2">10.</span> 附錄：工具準備清單</h2>
+<div class="outline-text-2" id="text-10">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">工具</th>
+<th scope="col" class="org-left">費用</th>
+<th scope="col" class="org-left">事前準備</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">NotebookLM</td>
+<td class="org-left">免費（Google 帳號）</td>
+<td class="org-left">預先上傳三份糖業史料 PDF</td>
+</tr>
+
+<tr>
+<td class="org-left">Gamma</td>
+<td class="org-left">免費版夠用</td>
+<td class="org-left">建好帳號</td>
+</tr>
+
+<tr>
+<td class="org-left">Napkin</td>
+<td class="org-left">免費</td>
+<td class="org-left">準備一段產業流程文字</td>
+</tr>
+
+<tr>
+<td class="org-left">Claude（網頁版）</td>
+<td class="org-left">免費（每5hr 15-40則）</td>
+<td class="org-left">建好帳號，用來組裝 Word 檔</td>
+</tr>
+
+<tr>
+<td class="org-left">ChatGPT 語音</td>
+<td class="org-left">免費版可用</td>
+<td class="org-left">手機裝好 app</td>
+</tr>
+
+<tr>
+<td class="org-left">Claude Code</td>
+<td class="org-left">需訂閱或 API</td>
+<td class="org-left">預先裝好，準備 Demo 腳本</td>
+</tr>
+
+<tr>
+<td class="org-left">Gemini CLI</td>
+<td class="org-left">免費（用 API Key）</td>
+<td class="org-left">到 AI Studio 先拿 key</td>
+</tr>
+
+<tr>
+<td class="org-left">Ideogram</td>
+<td class="org-left">免費版有額度</td>
+<td class="org-left">建好帳號</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-org392557d" class="outline-2">
+<h2 id="org392557d"><span class="section-number-2">11.</span> 附錄：NotebookLM 素材——請把以下連結存成 PDF 後上傳</h2>
+<div class="outline-text-2" id="text-11">
+<p>
+操作方式：點開連結 → 在瀏覽器按 <code>Ctrl+P</code> （Mac 按 <code>⌘+P</code> ）→ 目的地選「儲存為 PDF」→ 上傳到 NotebookLM。
+</p>
+</div>
+<div id="outline-container-org66f90c0" class="outline-3">
+<h3 id="org66f90c0"><span class="section-number-3">11.1.</span> 主要素材（建議三份都上傳）</h3>
+<div class="outline-text-3" id="text-11-1">
+</div>
+<div id="outline-container-org0a98223" class="outline-4">
+<h4 id="org0a98223"><span class="section-number-4">11.1.1.</span> 1. 臺灣糖業史——維基百科</h4>
+<div class="outline-text-4" id="text-11-1-1">
+<ul class="org-ul">
+<li><a href="https://zh.wikipedia.org/zh-tw/%E8%87%BA%E7%81%A3%E7%B3%96%E6%A5%AD%E5%8F%B2">點此開啟</a>（瀏覽器列印存 PDF）</li>
+<li>性質：從荷蘭時期到戰後的完整通史，結構清楚，有時間軸</li>
+<li>重點段落：日治時期新式製糖工場的建立、四大製糖會社、原料採取區域制度</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd195cc5" class="outline-4">
+<h4 id="orgd195cc5"><span class="section-number-4">11.1.2.</span> 2. 臺灣「糖都」之父——虎尾糖廠</h4>
+<div class="outline-text-4" id="text-11-1-2">
+<ul class="org-ul">
+<li><a href="https://vocus.cc/article/6667e00efd89780001a6eb91">點此開啟</a>（瀏覽器列印存 PDF）</li>
+<li>性質：在地故事，故事性強，讀起來不像課本</li>
+<li>重點：鈴木藤三郎（「製糖王」）、1897 戊戌大水災催生糖廠、「東洋第一」的由來</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga679c70" class="outline-4">
+<h4 id="orga679c70"><span class="section-number-4">11.1.3.</span> 3. 虎尾糖廠製糖工場——台糖官網</h4>
+<div class="outline-text-4" id="text-11-1-3">
+<ul class="org-ul">
+<li><a href="https://www.taisugar.com.tw/chinese/Attractions_detail.aspx?n=10048&amp;s=69&amp;p=0">點此開啟</a>（瀏覽器列印存 PDF）</li>
+<li>性質：官方資料，簡短但有權威性</li>
+<li>重點：1907 年建廠沿革、目前全台唯二仍在製糖、轄區面積與年蔗量</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org0f10858" class="outline-3">
+<h3 id="org0f10858"><span class="section-number-3">11.2.</span> 補充素材（進階探索用）</h3>
+<div class="outline-text-3" id="text-11-2">
+</div>
+<div id="outline-container-orgfb2e8bd" class="outline-4">
+<h4 id="orgfb2e8bd"><span class="section-number-4">11.2.1.</span> 4. 近代產業——雲林糖業的興衰（楊彥騏）</h4>
+<div class="outline-text-4" id="text-11-2-1">
+<ul class="org-ul">
+<li><a href="https://www.twcenter.org.tw/wp-content/uploads/2015/05/g02_07_02_05.pdf">點此下載 PDF</a></li>
+<li>來源：台灣學智庫／楊彥騏（雲林在地文史工作者、協志高中教師）</li>
+<li>性質：完整涵蓋雲林四座糖廠（虎尾、斗六、北港、龍巖）的興衰史，含創廠人物、產業貢獻、戰後轉型</li>
+<li>重點：虎尾糖廠總廠的詳細沿革、鈴木藤三郎與藤山雷太、「東洋第一」酒精工場、四座糖廠的不同性格比較</li>
+<li>適合：最貼近工作坊主題的一篇，在地視角 + 完整脈絡</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd759f2d" class="outline-4">
+<h4 id="orgd759f2d"><span class="section-number-4">11.2.2.</span> 5. 甜蜜蜜的時空之旅——認識臺灣糖業故事</h4>
+<div class="outline-text-4" id="text-11-2-2">
+<ul class="org-ul">
+<li><a href="https://the.nmth.gov.tw/Uploads/Resource/Files/98d11ec4-cec9-42b0-9bcc-a3d281ceab7b.pdf">點此下載 PDF</a></li>
+<li>來源：國立臺灣歷史博物館</li>
+<li>性質：教學資源 PDF，7 頁，圖文並茂</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org31ce1fa" class="outline-4">
+<h4 id="org31ce1fa"><span class="section-number-4">11.2.3.</span> 6. 探訪糖與蜜之地——雲林虎尾百年糖廠</h4>
+<div class="outline-text-4" id="text-11-2-3">
+<ul class="org-ul">
+<li><a href="https://smiletaiwan.cw.com.tw/article/4141">點此開啟</a>（瀏覽器列印存 PDF）</li>
+<li>來源：微笑台灣（天下雜誌）</li>
+<li>性質：圖文報導，有現場照片，適合當視覺參考</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org92ad889" class="outline-4">
+<h4 id="org92ad889"><span class="section-number-4">11.2.4.</span> 7. 產業與城市共生時——從糖業的興衰看糖鄉虎尾的潛力</h4>
+<div class="outline-text-4" id="text-11-2-4">
+<ul class="org-ul">
+<li><a href="https://digitalarchives.tw/Exhibition/2424/1.html">點此開啟</a></li>
+<li>來源：數位典藏與數位學習國家型科技計畫（虎尾科大「再現糖業風華」計畫）</li>
+<li>性質：有 13 本免費電子書，涵蓋老照片、建物履歷、製糖流程</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org460afe5" class="outline-4">
+<h4 id="org460afe5"><span class="section-number-4">11.2.5.</span> 8. 文化資料開放服務網——糖業的過去與現在</h4>
+<div class="outline-text-4" id="text-11-2-5">
+<ul class="org-ul">
+<li><a href="https://opendata.culture.tw/frontsite/sugar">點此開啟</a></li>
+<li>來源：文化部</li>
+<li>性質：整合文資局古蹟、歷史建築等開放資料，含虎尾糖廠鐵橋等</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd4277ea" class="outline-4">
+<h4 id="orgd4277ea"><span class="section-number-4">11.2.6.</span> 9. 台糖通訊——臺灣糖業小史（1620-1901）</h4>
+<div class="outline-text-4" id="text-11-2-6">
+<ul class="org-ul">
+<li><a href="https://www.taisugar.com.tw/monthly/CPN.aspx?ms=1495&amp;p=13389178&amp;s=13389186">點此開啟</a>（瀏覽器列印存 PDF）</li>
+<li>來源：台糖公司內部刊物</li>
+<li>性質：新式糖業誕生前的歷史脈絡，從荷蘭到清末</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org417df79" class="outline-4">
+<h4 id="org417df79"><span class="section-number-4">11.2.7.</span> 10. 虎糖與糖都所交織的特殊風情——台糖通訊</h4>
+<div class="outline-text-4" id="text-11-2-7">
+<ul class="org-ul">
+<li><a href="https://www.taisugar.com.tw/monthly/CPN.aspx?ms=1485&amp;p=13388859&amp;s=13388881">點此開啟</a>（瀏覽器列印存 PDF）</li>
+<li>來源：台糖通訊 2022 年 8 月號</li>
+<li>性質：介紹虎尾糖廠與糖都的文化風情，生活風格類專題</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgab56e4c" class="outline-4">
+<h4 id="orgab56e4c"><span class="section-number-4">11.2.8.</span> 11. 虎尾糖廠——國家文化記憶庫線上策展</h4>
+<div class="outline-text-4" id="text-11-2-8">
+<ul class="org-ul">
+<li><a href="https://curation.culture.tw/curation/public?id=1702">點此開啟</a>（瀏覽器列印存 PDF）</li>
+<li>來源：國家文化記憶庫（時空旅行社策展平臺）</li>
+<li>性質：以虎尾糖廠為案例的線上展覽，涵蓋「工業日本、農業臺灣」政策、新式機械製糖技術、糖廠轉型文創</li>
+<li>適合：圖文豐富，直接丟進 NotebookLM 效果好</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge9981f8" class="outline-4">
+<h4 id="orge9981f8"><span class="section-number-4">11.2.9.</span> 12. 台灣蔗糖的晚年記事——糖廠轉型困境（公視《我們的島》）</h4>
+<div class="outline-text-4" id="text-11-2-9">
+<ul class="org-ul">
+<li><a href="https://ourisland.pts.org.tw/content/1084">點此開啟</a>（瀏覽器列印存 PDF）</li>
+<li>來源：公共電視《我們的島》第 495 集（2009）</li>
+<li>性質：報導糖業衰退與轉型困境，虎尾糖廠為重點對象</li>
+<li>重點：虎尾五分車是全台僅剩還在載運甘蔗的列車、日式宿舍遭拆除的文資爭議</li>
+<li>適合：從「產業轉型」或「文化資產保存」角度切入學習歷程的同學</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org655003b" class="outline-4">
+<h4 id="org655003b"><span class="section-number-4">11.2.10.</span> 13. 說糖 HUWEI SUGAR——虎尾糖業文化路徑</h4>
+<div class="outline-text-4" id="text-11-2-10">
+<ul class="org-ul">
+<li><a href="https://www.huweisugar.com/Course/Detail/3fba5042-a243-45f0-af61-1e6cb9f38ff4">點此開啟</a>（瀏覽器列印存 PDF）</li>
+<li>來源：雲林虎尾說糖官方網站（雲林記憶 Cool）</li>
+<li>性質：在地糖業文化體驗課程介紹、實境解謎活動，結合教育與觀光</li>
+<li>適合：展示虎尾糖廠「現在進行式」的活化案例，補充歷史素材之外的當代觀點</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org1e09faf" class="outline-2">
+<h2 id="org1e09faf"><span class="section-number-2">12.</span> 附錄：小論文格式規範（貼給 Claude 用）</h2>
+<div class="outline-text-2" id="text-12">
+<p>
+以下是「全國高級中等學校小論文寫作比賽格式說明」的完整規範。使用時請整段複製，連同你的素材一起貼進 Claude 或 Gemini 的對話框。
+</p>
+
+<p>
+格式說明 PDF 原始來源：<a href="https://www.cdjh.hc.edu.tw/uploads/1589183819709PERVPvtb.pdf">點此下載 PDF</a>
+</p>
+
+<pre class="example" id="org758be60">
+【全國高級中等學校小論文寫作比賽格式說明】
+
+壹、篇幅要求
+小論文篇幅以 A4 紙張 4-10 頁為限（不含封面）。
+【未按照此規定之作品，只給 1 分】
+
+貳、版面要求
+一、使用新細明體 12 級字打字，不可放大字型，單行間距，邊界上下左右各留 2 公分。
+二、版面編排
+  （一）所有標題皆須單獨成行。
+  （二）標題與段落之間要空一行。
+  （三）段落與段落之間要空一行。
+  （四）段落開頭與一般中英文寫作相同。
+三、頁首及首尾：每頁頁首需加入小論文篇名，頁尾插入頁碼。文字為 10 級字、置中。
+【未按照此規定之作品，總分扣 1 分】
+
+參、格式說明
+小論文之基本架構分為「封面頁」及四大段落：「壹、前言」、「貳、正文」、「參、結論」、「肆、引註資料」
+（英文寫作類請用：I. Introduction II. Body III. Conclusion IV. References）
+
+一、封面頁
+  （一）單獨一頁、不編頁碼。
+  （二）含投稿類別、小論文篇名、作者及指導老師。
+  （三）不能有插圖。
+  （四）作者依「姓名。學校。部別/年級」之順序編排。
+
+二、前言
+  此處可以就為何選擇這個題目，透過什麼方法、運用什麼概念進行資料搜集，整篇文章的討論架構與範圍，以及想要達成的目的摘要而寫。
+
+三、正文
+  （一）「正文」為小論文之主體所在。
+  （二）在形式上必須分層次、分段來條列說明。「正文」之論述層次可參考下例：
+    一、○○○○
+      （一）○○○○
+        1、○○○○
+          （1）○○○○
+  ※小論文因規模較小，建議分成四個層次即可。
+  （三）在內容上應特別強調相關資料的引用、彙整、分析、辯證，亦即需「引經據典」地進行文獻探討。
+  （四）文中引用別人資料時需加註資料來源，若直接引用原文，請以粗體並加「」標明，引用結束需標明（作者，年代），並於「肆、引註資料」段說明資料來源。
+  ※注意：同一處引用參考資料（單一書籍、期刊、報紙...）之原文不得超過 50 字，詩文、劇本、法律條文等不在此限。
+  （五）正文中如有引用圖/表，圖/表需有編號及標題。圖之編號/標題在下，表之編號/標題在上，圖/表下面需註明資料來源。
+  ※圖之大小不得超過頁面 1/4，表不在此限。
+
+四、結論
+  （一）「結論」主要包括研究過程中所遇到的種種現象思考、或根據研究結果提出看法，以及提出未來值得進一步研究的方向。
+  （二）「結論」亦可用條列方式陳述，使讀者清楚明瞭。
+
+五、引註資料
+  （一）每篇小論文皆需附引註資料。
+  （二）引註資料亦可方便讀者依線索尋找原資料閱讀，故需註明清楚。
+  （三）小論文比賽參考資料至少要 3 篇，並不得全部來自網站。
+  【未按照此規定之作品，只給 1 分】
+
+六、引註格式
+  正文引用及引註資料書寫範例請參閱中學生網站「全國高級中等學校小論文寫作比賽引註資料格式範例」。
+  【引用格式錯誤，總分扣 1 分】
+</pre>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2026-04-30</p>
+<p class="author">Author: 臺南一中 顏永進</p>
+<p class="date">Created: 2026-04-28 Tue 12:54</p>
+</div>
+</body>
+</html>
