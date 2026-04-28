@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="zh-TW">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>和 AI 作朋友——高中生的 AI 工具箱</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="slides-styles.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- ============ TITLE ============ -->
+      <section id="title" class="section-divider" data-state="is-section-divider" style="text-align: center;">
+        <div class="title-line" style="margin: 0 auto;"></div>
+        <h1 style="font-size: 52pt; margin-top: 15px;">和 AI 作朋友</h1>
+        <p style="font-size: 26pt; color: var(--primary-color); margin-top: 5px;">高中生的 AI 工具箱</p>
+        <p style="margin-top: 15px; font-size: 18pt;">顏永進 ｜ 2026.04.30 ｜ 雲林</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 25px; max-width: 700px; margin-left: auto; margin-right: auto;">
+          <div>
+            <img src="img/qr-slides.png" style="width: 160px; border-radius: 10px;">
+            <p style="font-size: 14pt; margin-top: 8px; color: var(--muted-color);">簡報</p>
+            <p style="font-size: 16pt; color: var(--primary-color);">tinyurl.com/2bek3j2e</p>
+          </div>
+          <div>
+            <img src="img/qr-index.png" style="width: 160px; border-radius: 10px;">
+            <p style="font-size: 14pt; margin-top: 8px; color: var(--muted-color);">教學網頁（學生教材）</p>
+            <p style="font-size: 16pt; color: var(--primary-color);">tinyurl.com/2a6ewtrt</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ TODAY'S MISSION ============ -->
+      <section id="mission">
+        <h2>今天要做什麼？</h2>
+        <div class="content">
+          <p class="text-xl" style="margin-bottom: 15px;">用 AI 工具，從零完成一份<strong>台灣史小論文</strong></p>
+          <p class="text-2xl" style="margin-bottom: 25px;">主題：<strong>為什麼日本人選雲林蓋糖廠？</strong></p>
+          <table>
+            <thead><tr><th>步驟</th><th>工具</th><th>你會得到</th></tr></thead>
+            <tbody>
+              <tr><td><span class="step-badge">1</span></td><td>NotebookLM</td><td>研究筆記（含出處）</td></tr>
+              <tr><td><span class="step-badge">2</span></td><td>Napkin</td><td>因果關係圖</td></tr>
+              <tr><td><span class="step-badge">3</span></td><td>Claude</td><td>小論文 Word 檔</td></tr>
+              <tr><td><span class="step-badge">4</span></td><td>ChatGPT</td><td>改好的反思段落</td></tr>
+              <tr><td><span class="step-badge">5</span></td><td>Gamma</td><td>報告簡報</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ============ DIVIDER: STEP 1 ============ -->
+      <section id="div-step1" class="section-divider" data-state="is-section-divider">
+        <p style="font-size: 18pt; letter-spacing: 0.15em;">STEP 1</p>
+        <h1 style="font-size: 48pt;"><i class="fa-solid fa-book-open" style="margin-right: 15px;"></i>NotebookLM</h1>
+        <p>餵素材、問問題、產出研究筆記</p>
+      </section>
+
+      <!-- Step 1 slides (vertical stack) -->
+      <section>
+        <section id="step1-how">
+          <h2><span class="step-badge">1</span> NotebookLM 怎麼用？</h2>
+          <div class="content">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px;">
+              <div>
+                <h3 style="color: var(--primary-color);"><i class="fa-solid fa-upload"></i> 上傳素材</h3>
+                <p>把文章存成 PDF，上傳到 NotebookLM</p>
+                <p class="text-muted" style="font-size: 14pt; margin-top: 8px;">素材清單見教學網頁底部</p>
+              </div>
+              <div>
+                <h3 style="color: var(--primary-color);"><i class="fa-solid fa-comments"></i> 問問題</h3>
+                <ul>
+                  <li>日本人為什麼選雲林？</li>
+                  <li>戊戌大水災跟糖廠的關係？</li>
+                  <li>虎尾 vs. 橋頭有什麼不同？</li>
+                  <li>小論文大綱可以怎麼寫？</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="step1-pack">
+          <h2><span class="step-badge">1</span> 最後一步：請它幫你打包</h2>
+          <div class="content">
+            <p>問完所有問題後，貼這段指令：</p>
+            <div class="callout callout-blue" style="font-size: 14pt; margin-top: 15px;">
+              <p>「請把我們剛才所有對話整合成一份<strong>研究筆記</strong>：</p>
+              <p>一、研究問題<br>二、關鍵發現（每點標明出處）<br>三、比較分析<br>四、建議大綱<br>五、參考資料清單」</p>
+            </div>
+            <div class="callout callout-green" style="margin-top: 15px;">
+              <p><i class="fa-solid fa-arrow-right"></i> <strong>只要複製這一份</strong>，就是等一下餵給 Claude 的全部素材</p>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <!-- ============ DIVIDER: STEP 2 ============ -->
+      <section id="div-step2" class="section-divider" data-state="is-section-divider">
+        <p style="font-size: 18pt; letter-spacing: 0.15em;">STEP 2</p>
+        <h1 style="font-size: 48pt;"><i class="fa-solid fa-diagram-project" style="margin-right: 15px;"></i>Napkin</h1>
+        <p>把文字變成圖表</p>
+      </section>
+
+      <!-- Step 2 -->
+      <section id="step2">
+        <h2><span class="step-badge">2</span> Napkin——畫一張圖</h2>
+        <div class="content">
+          <p>把你的研究重點貼進 <a href="https://www.napkin.ai" target="_blank">Napkin</a>，它會自動生成圖表</p>
+          <div class="callout" style="font-size: 14pt; margin-top: 15px;">
+            <p><strong>日本選擇在雲林虎尾設立糖廠的原因：</strong></p>
+            <p>1. 天災創造機會：1897 戊戌大水災沖出大量溪埔地<br>
+            2. 自然條件適合：雲林平原日照充足、雨量適中<br>
+            3. 政策推動：1902 年糖業獎勵規則<br>
+            4. 企業家眼光：鈴木藤三郎，1906 年設廠<br>
+            5. 國家需求：日俄戰爭後需要糖的自給自足</p>
+          </div>
+          <p style="margin-top: 12px;"><i class="fa-solid fa-arrow-right text-cyan"></i> 產出的圖放進小論文或簡報</p>
+        </div>
+      </section>
+
+      <!-- ============ DIVIDER: STEP 3 ============ -->
+      <section id="div-step3" class="section-divider" data-state="is-section-divider">
+        <p style="font-size: 18pt; letter-spacing: 0.15em;">STEP 3</p>
+        <h1 style="font-size: 48pt;"><i class="fa-solid fa-file-word" style="margin-right: 15px;"></i>Claude</h1>
+        <p>生成小論文 Word 檔</p>
+      </section>
+
+      <!-- Step 3 slides -->
+      <section id="step3-how">
+        <h2><span class="step-badge">3</span> Claude——生成 Word</h2>
+        <div class="content">
+          <p>打開 <a href="https://claude.ai" target="_blank">claude.ai</a>（免費帳號），依序貼入：</p>
+          <div style="display: grid; grid-template-columns: 40px 1fr; gap: 10px 15px; margin-top: 15px; align-items: start;">
+            <span class="step-badge" style="font-size: 12pt; width: 28px; height: 28px; line-height: 28px;">1</span>
+            <p>小論文<strong>格式規範</strong>（見教學網頁附錄）</p>
+            <span class="step-badge" style="font-size: 12pt; width: 28px; height: 28px; line-height: 28px;">2</span>
+            <p>Step 1 的<strong>研究筆記</strong>（含出處）</p>
+            <span class="step-badge" style="font-size: 12pt; width: 28px; height: 28px; line-height: 28px;">3</span>
+            <p>指令：「整理成小論文，輸出 Word 檔」</p>
+          </div>
+          <div class="callout callout-orange" style="margin-top: 20px;">
+            <p><i class="fa-solid fa-download"></i> Claude 生成 Artifact → 點<strong>「下載」</strong>→ 拿到 .docx</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="step3-check">
+        <h2><span class="step-badge">3</span> 下載後一定要做的事</h2>
+        <div class="content text-xl">
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin-top: 15px;">
+            <div class="box" style="text-align: center;">
+              <p style="font-size: 28pt; margin-bottom: 10px;"><i class="fa-solid fa-pen text-cyan"></i></p>
+              <p><strong>換成你的口吻</strong></p>
+              <p class="text-muted" style="font-size: 14pt;">教授看得出 AI 味</p>
+            </div>
+            <div class="box" style="text-align: center;">
+              <p style="font-size: 28pt; margin-bottom: 10px;"><i class="fa-solid fa-magnifying-glass text-orange"></i></p>
+              <p><strong>檢查事實</strong></p>
+              <p class="text-muted" style="font-size: 14pt;">人名、年份、事件</p>
+            </div>
+            <div class="box" style="text-align: center;">
+              <p style="font-size: 28pt; margin-bottom: 10px;"><i class="fa-solid fa-arrow-right text-green"></i></p>
+              <p><strong>反思先留著</strong></p>
+              <p class="text-muted" style="font-size: 14pt;">下一步會改</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ DIVIDER: STEP 4 ============ -->
+      <section id="div-step4" class="section-divider" data-state="is-section-divider">
+        <p style="font-size: 18pt; letter-spacing: 0.15em;">STEP 4</p>
+        <h1 style="font-size: 48pt;"><i class="fa-solid fa-dumbbell" style="margin-right: 15px;"></i>ChatGPT</h1>
+        <p>用 AI 當教練改反思</p>
+      </section>
+
+      <!-- Step 4 slides -->
+      <section id="step4-prompt">
+        <h2><span class="step-badge">4</span> 好 prompt vs. 爛 prompt</h2>
+        <div class="content">
+          <div class="prompt-bad">
+            <p><i class="fa-solid fa-xmark" style="color: var(--red);"></i> <strong>爛 prompt：</strong>「幫我寫一段學習歷程反思」</p>
+            <p class="text-muted" style="font-size: 13pt;">→ 罐頭、流水帳</p>
+          </div>
+          <div class="prompt-good" style="margin-top: 5px;">
+            <p><i class="fa-solid fa-check" style="color: var(--green);"></i> <strong>好 prompt：</strong></p>
+            <p style="font-size: 14pt;">「我住雲林，常經過虎尾糖廠，以前只覺得是老地方。研究後才知道日本人選雲林不是巧合，是一場水災沖出了空地。幫我用『從不在意到驚訝』的轉變寫反思，像高中生寫的，300字以內。」</p>
+            <p class="text-muted" style="font-size: 13pt;">→ 有你的影子</p>
+          </div>
+          <div class="callout callout-green" style="margin-top: 10px;">
+            <p><strong>你給 AI 多少「你的樣子」，它就回給你多少「你的樣子」</strong></p>
+          </div>
+        </div>
+      </section>
+
+      <section id="step4-coach">
+        <h2><span class="step-badge">4</span> 用 AI 改，不是用 AI 寫</h2>
+        <div class="content">
+          <p>拿到初稿後，繼續用 AI 當教練：</p>
+          <div class="callout" style="font-size: 15pt; margin-top: 12px;">
+            <p>「這段反思沒有連結到研究問題，幫我指出哪裡可以改。」</p>
+          </div>
+          <div class="callout callout-orange" style="font-size: 15pt;">
+            <p>「給我三種角度：學到什麼 / 對家鄉的看法改變 / 還想探索什麼」</p>
+          </div>
+          <div class="callout callout-green" style="font-size: 15pt;">
+            <p>「這句話怎麼改更有力？」</p>
+          </div>
+          <p style="margin-top: 12px;"><strong>至少來回三輪</strong>，改好後貼回 Word 檔</p>
+        </div>
+      </section>
+
+      <!-- ============ DIVIDER: STEP 5 ============ -->
+      <section id="div-step5" class="section-divider" data-state="is-section-divider">
+        <p style="font-size: 18pt; letter-spacing: 0.15em;">STEP 5</p>
+        <h1 style="font-size: 48pt;"><i class="fa-solid fa-presentation-screen" style="margin-right: 15px;"></i>Gamma</h1>
+        <p>做簡報</p>
+      </section>
+
+      <!-- Step 5 -->
+      <section id="step5">
+        <h2><span class="step-badge">5</span> Gamma——做簡報</h2>
+        <div class="content">
+          <p>把 Word 內容貼進 <a href="https://gamma.app" target="_blank">Gamma</a>，輸入：</p>
+          <div class="callout" style="font-size: 15pt; margin-top: 15px;">
+            <p>「高中歷史課程學習成果報告簡報。<br>
+            標題：（你的題目）<br>
+            一、研究動機<br>
+            二、研究發現<br>
+            三、學習反思」</p>
+          </div>
+          <p style="margin-top: 15px;"><i class="fa-solid fa-arrow-right text-cyan"></i> 30 秒生成簡報</p>
+          <p><i class="fa-solid fa-arrow-right text-cyan"></i> 記得刪掉 AI 亂加的內容、補上自己的話</p>
+          <p class="text-muted" style="margin-top: 12px;">也可以用 <a href="https://claude.ai" target="_blank">Claude</a> 直接生成 .pptx</p>
+        </div>
+      </section>
+
+      <!-- ============ DIVIDER: AI原理 ============ -->
+      <section id="div-how" class="section-divider" data-state="is-section-divider">
+        <h1 style="font-size: 48pt;"><i class="fa-solid fa-brain" style="margin-right: 15px;"></i>AI 怎麼辦到的？</h1>
+        <p>揭開黑盒子</p>
+      </section>
+
+      <!-- AI = function -->
+      <section id="ai-function">
+        <h2>AI 的本質是「函數」</h2>
+        <div class="content">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: start;">
+            <div>
+              <p class="text-xl">國中數學學過：</p>
+              <p class="text-xl">輸入 → 規則 → 輸出</p>
+              <p class="text-xl" style="margin-top: 10px;">AI 做的事情<strong>一模一樣</strong></p>
+              <img src="img/04-function-flow.png" style="max-width: 90%; margin-top: 15px; border-radius: 8px;">
+            </div>
+            <div>
+              <img src="img/04-digit-prob.png" style="max-width: 100%; border-radius: 8px;">
+              <img src="img/04-catdog-prob.png" style="max-width: 75%; margin-top: 10px; border-radius: 8px;">
+            </div>
+          </div>
+          <div class="callout callout-green" style="margin-top: 15px;">
+            <p>不管多厲害，骨子裡都是：<strong>輸入 → 函數 → 輸出</strong></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- AI = word chain function (vertical stack) -->
+      <section>
+        <section id="ai-chain">
+          <h2>生成式 AI 是「會接龍的函數」</h2>
+          <div class="content">
+            <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 30px; align-items: center;">
+              <div>
+                <p class="text-xl">每次只猜<strong>下一個字</strong>，再把輸出接回輸入</p>
+                <img src="img/06-prob-step1.png" style="max-width: 95%; margin-top: 15px; border-radius: 8px; background: white; padding: 10px;">
+                <img src="img/06-prob-step2.png" style="max-width: 85%; margin-top: 10px; border-radius: 8px; background: white; padding: 10px;">
+              </div>
+              <div>
+                <img src="img/06-blackboard.png" style="max-width: 100%; border-radius: 8px;">
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="ai-temperature">
+          <h2>為什麼同一題會得到不同答案？</h2>
+          <div class="content">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: center;">
+              <div>
+                <p class="text-xl">AI 不是每次都選機率最高的字</p>
+                <p class="text-xl" style="margin-top: 10px;">像轉<strong>輪盤</strong>——機率高的比較容易中，但不是一定</p>
+                <div class="callout callout-orange" style="margin-top: 20px;">
+                  <p><i class="fa-solid fa-temperature-half"></i> <strong>溫度參數</strong>控制隨機性</p>
+                  <p style="font-size: 14pt; margin-top: 5px;">溫度低 → 回答固定<br>溫度高 → 回答有創意，但容易出錯</p>
+                </div>
+              </div>
+              <div style="text-align: center;">
+                <img src="img/06-roulette.png" style="max-width: 80%; border-radius: 8px; background: white; padding: 10px;">
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <!-- Token -->
+      <section id="token">
+        <h2>Token：AI 眼中的世界</h2>
+        <div class="content">
+          <p>AI 看到的不是文字，是 <strong>Token</strong>（碎片）</p>
+          <div class="callout callout-blue" style="margin-top: 15px;">
+            <p><i class="fa-solid fa-arrow-up-right-from-square"></i> 打開 <a href="https://platform.openai.com/tokenizer" target="_blank" style="color: var(--primary-color);">OpenAI Tokenizer</a> 試試：</p>
+            <ul style="margin-top: 8px;">
+              <li>輸入「虎尾糖廠」→ 看它被切成幾個 token</li>
+              <li>輸入「314159」→ 數字的切法完全不同</li>
+            </ul>
+          </div>
+          <p style="margin-top: 15px;">這就是為什麼 AI 有時候<strong class="text-red">數學會算錯</strong>——它看到的不是數字，是碎片</p>
+        </div>
+      </section>
+
+      <!-- Training -->
+      <section id="training">
+        <h2>AI 怎麼被訓練出來的？</h2>
+        <div class="content">
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin-top: 20px;">
+            <div class="box" style="text-align: center; border-top: 4px solid var(--primary-color);">
+              <p style="font-size: 36pt; margin-bottom: 8px;">1</p>
+              <p><strong>預訓練</strong></p>
+              <p class="text-muted" style="font-size: 14pt;">讀了整個網路的文字<br>→ 學會語言模式</p>
+            </div>
+            <div class="box" style="text-align: center; border-top: 4px solid var(--accent-orange);">
+              <p style="font-size: 36pt; margin-bottom: 8px;">2</p>
+              <p><strong>微調</strong></p>
+              <p class="text-muted" style="font-size: 14pt;">針對任務練習<br>→ 學會當助理</p>
+            </div>
+            <div class="box" style="text-align: center; border-top: 4px solid var(--accent-green);">
+              <p style="font-size: 36pt; margin-bottom: 8px;">3</p>
+              <p><strong>RLHF</strong></p>
+              <p class="text-muted" style="font-size: 14pt;">人類回饋好壞<br>→ 學會避免有害回應</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Hallucination (vertical stack) -->
+      <section>
+        <section id="hallucination">
+          <h2><i class="fa-solid fa-ghost" style="color: var(--secondary-color);"></i> 幻覺——AI 也會騙你</h2>
+          <div class="content">
+            <p class="text-xl">AI 有時候會一本正經地<strong class="text-red">「編故事」</strong>，這叫幻覺</p>
+            <div class="callout callout-red" style="margin-top: 20px;">
+              <p><strong>實驗：用同一個問題測四個 AI</strong></p>
+              <p style="font-size: 15pt; margin-top: 10px;">分別打開，貼上完全相同的問題：</p>
+              <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 12px; text-align: center;">
+                <a href="https://chatgpt.com" target="_blank" class="box" style="text-decoration: none;">ChatGPT</a>
+                <a href="https://claude.ai" target="_blank" class="box" style="text-decoration: none;">Claude</a>
+                <a href="https://gemini.google.com" target="_blank" class="box" style="text-decoration: none;">Gemini</a>
+                <a href="https://grok.com" target="_blank" class="box" style="text-decoration: none;">Grok</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="hallucination-prompt">
+          <h2><i class="fa-solid fa-ghost" style="color: var(--secondary-color);"></i> 問這個問題</h2>
+          <div class="content">
+            <div class="callout callout-red" style="font-size: 18pt; margin-top: 20px;">
+              <p>「請描述 1920 年雲林農民組合抗議虎尾糖廠壓低甘蔗收購價格的經過」</p>
+            </div>
+            <h3 style="margin-top: 25px; color: var(--primary-color);">觀察重點</h3>
+            <ul>
+              <li>四個 AI 講的是<strong>同一件事</strong>嗎？</li>
+              <li>有沒有 AI 承認<strong>「我不確定」</strong>？</li>
+              <li>跟 NotebookLM 的素材比對——<strong>哪些是真的？</strong></li>
+            </ul>
+            <div class="callout callout-green" style="margin-top: 15px;">
+              <p><strong>結論：AI 不是知識庫，是語言模型。所以才需要 NotebookLM——有出處的回答才可信。</strong></p>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <!-- Privacy -->
+      <section id="privacy">
+        <h2><i class="fa-solid fa-shield-halved" style="color: var(--secondary-color);"></i> 什麼東西不該丟給 AI？</h2>
+        <div class="content text-xl">
+          <p>你打進去的每一個字，都會離開你的電腦</p>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px;">
+            <div class="callout callout-red">
+              <p><strong>不要丟：</strong></p>
+              <ul style="font-size: 15pt;">
+                <li>日記、心情、家裡狀況</li>
+                <li>同學個資、輔導紀錄</li>
+                <li>未公開的競賽作品</li>
+              </ul>
+            </div>
+            <div class="callout callout-green">
+              <p><strong>判準：</strong></p>
+              <p style="font-size: 16pt; margin-top: 10px;">「被截圖貼到網路上，<br>我會崩潰嗎？」</p>
+              <p style="font-size: 16pt; margin-top: 8px;">會 → <strong>別丟雲端</strong></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ RESULTS ============ -->
+      <section id="results">
+        <h2>你現在手上有什麼？</h2>
+        <div class="content">
+          <div style="display: grid; grid-template-columns: 50px 1fr 1fr; gap: 12px 20px; margin-top: 15px; align-items: center;">
+            <span class="step-badge">1</span><p><strong>研究筆記</strong>（含出處）</p><p class="text-muted">NotebookLM</p>
+            <span class="step-badge">2</span><p><strong>因果關係圖</strong></p><p class="text-muted">Napkin</p>
+            <span class="step-badge">3</span><p><strong>小論文 Word 檔</strong></p><p class="text-muted">Claude</p>
+            <span class="step-badge">4</span><p><strong>反思定稿</strong>（貼回 Word）</p><p class="text-muted">ChatGPT</p>
+            <span class="step-badge">5</span><p><strong>報告簡報</strong></p><p class="text-muted">Gamma</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ TAKEAWAYS ============ -->
+      <section id="takeaways">
+        <h2>三個帶走的觀念</h2>
+        <div class="content">
+          <div style="display: grid; grid-template-columns: 1fr; gap: 20px; margin-top: 20px;">
+            <div class="callout callout-blue" style="font-size: 18pt;">
+              <p><strong>1. AI 幫你加速，不是幫你代寫</strong><br><span class="text-muted" style="font-size: 15pt;">最後掛名的是你</span></p>
+            </div>
+            <div class="callout callout-orange" style="font-size: 18pt;">
+              <p><strong>2. 好 prompt 比好工具重要</strong><br><span class="text-muted" style="font-size: 15pt;">你給 AI 多少「你的樣子」，它就回給你多少</span></p>
+            </div>
+            <div class="callout callout-green" style="font-size: 18pt;">
+              <p><strong>3. 一定要自己檢查</strong><br><span class="text-muted" style="font-size: 15pt;">四個 AI 可能給你四個版本的「歷史」</span></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ END ============ -->
+      <section id="end" class="section-divider" data-state="is-section-divider">
+        <div class="title-line" style="margin: 0 auto;"></div>
+        <h1 style="font-size: 52pt; margin-top: 20px;">謝謝！</h1>
+        <p style="font-size: 22pt; color: var(--primary-color); margin-top: 15px;">現在開始跟 AI 作朋友吧</p>
+        <p style="margin-top: 30px;">教學網頁：<strong>index.html</strong></p>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+  <script>
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      slideNumber: true,
+      hash: true,
+      transition: 'slide',
+      center: false,
+      autoSlide: 0,
+      loop: false,
+    });
+  </script>
+</body>
+</html>
