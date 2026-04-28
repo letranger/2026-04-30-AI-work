@@ -5,8 +5,7 @@
 #+INCLUDE: ../pdf.org
 #+OPTIONS: toc:2 ^:nil num:5
 #+OPTIONS: H:4
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../css/muse.css" />
-#+HTML_HEAD_EXTRA: <script src="../css/copy_code.js"></script>
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../css/muse.css" />
 
 * 今天要做什麼？
 
@@ -177,10 +176,10 @@ AI 做的事情其實一模一樣，只是函數複雜得多：
 
 不管 AI 看起來多厲害，骨子裡都是：*輸入 → 函數 → 輸出*。
 
-#+ATTR_HTML: :width 300px
+#+ATTR_HTML: :width 500px
 [[file:img/04-function-flow.png]]
 
-#+ATTR_HTML: :width 400px
+#+ATTR_HTML: :width 600px
 [[file:img/04-digit-prob.png]]
 
 差別只在於函數裡面有幾千億個參數（GPT-4 有超過一兆個），這些參數是從海量資料中「學」出來的。
@@ -191,15 +190,15 @@ AI 做的事情其實一模一樣，只是函數複雜得多：
 
 答案：*一個每次只猜下一個字的函數，不斷把自己的輸出接回輸入，像接龍一樣。*
 
-#+ATTR_HTML: :width 500px
+#+ATTR_HTML: :width 650px
 [[file:img/06-blackboard.png]]
 
 以「什麼是臺灣最美的風景？」為例：
 
-#+ATTR_HTML: :width 500px
+#+ATTR_HTML: :width 700px
 [[file:img/06-prob-step1.png]]
 
-#+ATTR_HTML: :width 400px
+#+ATTR_HTML: :width 600px
 [[file:img/06-prob-step2.png]]
 
 #+begin_example
@@ -215,7 +214,7 @@ f("什麼是臺灣最美的風景？臺灣最美的風景是") → 人
 
 但它不是每次都選機率最高的字——像轉輪盤一樣，機率高的字比較容易被選中，但不是一定：
 
-#+ATTR_HTML: :width 250px
+#+ATTR_HTML: :width 400px
 [[file:img/06-roulette.png]]
 
 AI 會加入一點隨機性（叫做「溫度參數」），讓回答更多樣。這也是為什麼你問同一個問題兩次，可能會得到不同的答案。

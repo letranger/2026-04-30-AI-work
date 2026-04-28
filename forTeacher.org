@@ -6,14 +6,14 @@
 #+AUTHOR: 臺南一中 顏永進
 #+DATE: 2026-04-30
 #+SUBTITLE: 雲林場高中生 AI 工作坊
-#+INCLUDE: ../pdf.org
 #+TAGS: AI, Teaching, Workshop
 #+EXCLUDE_TAGS: noexport
 #+OPTIONS: toc:2 ^:nil num:5
 #+OPTIONS: H:4
 #+LATEX:\newpage
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../css/muse.css" />
-#+HTML_HEAD_EXTRA: <script src="../css/copy_code.js"></script>
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/letranger/css@main/muse.css" />
+#+HTML_HEAD_EXTRA: <script src="https://cdn.jsdelivr.net/gh/letranger/css@main/copy_code.js"></script>
+
 
 * 破題（5 min）
 
