@@ -2,7 +2,6 @@
 #+AUTHOR: 臺南一中 顏永進
 #+DATE: 2026-04-30
 #+SUBTITLE: 雲林場高中生 AI 工作坊
-#+INCLUDE: ../pdf.org
 #+OPTIONS: toc:2 ^:nil num:5
 #+OPTIONS: H:4
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/letranger/css@main/muse.css" />
@@ -194,6 +193,7 @@ AI 做的事情其實一模一樣，只是函數複雜得多：
 #+ATTR_HTML: :width 650px
 [[file:img/06-blackboard.png]]
 
+
 以「什麼是臺灣最美的風景？」為例：
 
 #+ATTR_HTML: :width 700px
@@ -215,7 +215,7 @@ f("什麼是臺灣最美的風景？臺灣最美的風景是") → 人
 
 但它不是每次都選機率最高的字——像轉輪盤一樣，機率高的字比較容易被選中，但不是一定：
 
-#+ATTR_HTML: :width 400px
+#+ATTR_HTML: :width 800px
 [[file:img/06-roulette.png]]
 
 AI 會加入一點隨機性（叫做「溫度參數」），讓回答更多樣。這也是為什麼你問同一個問題兩次，可能會得到不同的答案。
