@@ -265,10 +265,10 @@ add_text(slide, Inches(0.8), Inches(1.85), Inches(11.5), Inches(0.5),
 
 levels = [
     ("Lv.1", "問答機", "prompt → copy → paste", "ChatGPT 網頁版", ACCENT2),
-    ("Lv.2", "整合工作流", "AI 嵌進你的工具裡", "Copilot、NotebookLM", ACCENT4),
-    ("Lv.3", "AI Agent", "AI 自己規劃步驟、操作電腦", "Claude Code、Gemini CLI", ACCENT),
-    ("Lv.4", "進階助理", "它記得你的偏好", "Skills、MCP", ACCENT3),
-    ("Lv.5", "專屬助理", "自動完成、主動建議", "OpenClaw、Hermes", ACCENT5),
+    ("Lv.2", "整合工作流", "AI 直接嵌在你的工具裡", "Copilot、NotebookLM", ACCENT4),
+    ("Lv.3", "AI Agent（初級助理）", "AI 自己規劃步驟、操作電腦", "Claude Code、Gemini CLI", ACCENT),
+    ("Lv.4", "進階助理", "你規劃步驟，AI 幫你操作電腦", "Claude Code / CLIo", ACCENT3),
+    ("Lv.5", "專屬助理", "AI 幫你規劃步驟，幫你操作電腦", "OpenClaw、Hermes", ACCENT5),
 ]
 for i, (lv, name, how, tools, color) in enumerate(levels):
     y = Inches(2.6 + i * 0.78)
