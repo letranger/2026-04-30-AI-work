@@ -39,18 +39,40 @@
       <section id="mission">
         <h2>今天要做什麼？</h2>
         <div class="content">
-          <p class="text-xl" style="margin-bottom: 15px;">用 AI 工具，從零完成一份<strong>台灣史小論文</strong></p>
-          <p class="text-2xl" style="margin-bottom: 25px;">主題：<strong>為什麼日本人選雲林蓋糖廠？</strong></p>
+          <p class="text-xl" style="margin-bottom: 8px;">很多人以為 AI 是「幫你寫東西」——真正厲害的用法是「<strong>讓 AI 幫你做事情</strong>」</p>
+          <p class="text-xl" style="margin-bottom: 18px;">三小時練「交辦」，做出一份<strong>真的可以上傳</strong>的台灣史學習歷程</p>
+          <p class="text-2xl" style="margin-bottom: 18px;">主題：<strong>為什麼日本人選雲林蓋糖廠？</strong></p>
           <table>
-            <thead><tr><th>步驟</th><th>工具</th><th>你會得到</th></tr></thead>
+            <thead><tr><th>階段</th><th>你做什麼</th><th>帶走的東西</th></tr></thead>
             <tbody>
-              <tr><td><span class="step-badge">1</span></td><td>NotebookLM</td><td>研究筆記（含出處）</td></tr>
-              <tr><td><span class="step-badge">2</span></td><td>Napkin</td><td>因果關係圖</td></tr>
-              <tr><td><span class="step-badge">3</span></td><td>Claude</td><td>小論文 Word 檔</td></tr>
-              <tr><td><span class="step-badge">4</span></td><td>ChatGPT</td><td>改好的反思段落</td></tr>
-              <tr><td><span class="step-badge">5</span></td><td>Gamma</td><td>報告簡報</td></tr>
+              <tr><td><strong>讀</strong></td><td>NotebookLM 消化糖業史料</td><td>含出處的研究筆記（Word）</td></tr>
+              <tr><td><strong>做</strong></td><td>Napkin 畫概念圖 + Claude 生 Word</td><td>小論文 .docx 初稿</td></tr>
+              <tr><td><strong>學</strong></td><td>ChatGPT 當教練改反思</td><td>有深度的反思，回 Word</td></tr>
+              <tr><td><strong>簡報</strong></td><td>Gamma 或 Claude 做投影片</td><td>學習歷程簡報</td></tr>
+              <tr><td><strong>創造</strong></td><td>（加分）AI Agent 做網頁</td><td>糖業史時間軸網站</td></tr>
             </tbody>
           </table>
+        </div>
+      </section>
+
+      <!-- ============ AI 五層次 ============ -->
+      <section id="ai-levels">
+        <h2>AI 使用的五個層次</h2>
+        <div class="content">
+          <p class="text-xl" style="margin-bottom: 15px;">大部分人卡在 Lv.1，所以寫出來的東西像罐頭。今天直接跳到 <strong>Lv.3</strong>。</p>
+          <table style="font-size: 16pt;">
+            <thead><tr><th>層次</th><th>做法</th><th>代表工具</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Lv.1</strong> 問答機</td><td>prompt → copy → paste</td><td class="text-muted">ChatGPT 網頁版</td></tr>
+              <tr><td><strong>Lv.2</strong> 整合工作流</td><td>AI 嵌進工具裡</td><td class="text-muted">Copilot、NotebookLM</td></tr>
+              <tr style="background: rgba(42, 138, 203, 0.12);"><td><strong style="color: var(--primary-color);">Lv.3</strong> AI Agent</td><td>AI 自己規劃步驟、操作電腦</td><td class="text-muted">Claude Code、Gemini CLI</td></tr>
+              <tr><td><strong>Lv.4</strong> 進階助理</td><td>它記得你的偏好</td><td class="text-muted">Skills、MCP</td></tr>
+              <tr><td><strong>Lv.5</strong> 專屬助理</td><td>自動完成、主動建議</td><td class="text-muted">OpenClaw、Hermes</td></tr>
+            </tbody>
+          </table>
+          <div class="callout callout-green" style="margin-top: 15px;">
+            <p>你要學的不是某一個工具，是<strong>怎麼跟 AI 一起長</strong></p>
+          </div>
         </div>
       </section>
 
@@ -63,6 +85,25 @@
 
       <!-- Step 1 slides (vertical stack) -->
       <section>
+        <section id="step1-lv1">
+          <h2><span class="step-badge">1</span> 先看 Lv.1 的限制</h2>
+          <div class="content">
+            <p>打開 <a href="https://chatgpt.com" target="_blank">ChatGPT</a>，直接問：</p>
+            <div class="callout callout-red" style="font-size: 18pt; margin-top: 12px;">
+              <p>「日本人為什麼選擇在雲林虎尾蓋糖廠？」</p>
+            </div>
+            <p style="margin-top: 18px;">ChatGPT 給你看起來不錯的答案，但：</p>
+            <ul>
+              <li>可能混入<strong class="text-red">不正確的細節</strong>（幻覺）</li>
+              <li>不會提到「<strong>戊戌大水災</strong>」這個關鍵事件</li>
+              <li>沒有引用來源——你不知道哪句是真的</li>
+            </ul>
+            <div class="callout callout-orange" style="margin-top: 12px;">
+              <p>這就是 Lv.1 的極限——給答案，但<strong>無法驗證</strong>。換 Lv.2。</p>
+            </div>
+          </div>
+        </section>
+
         <section id="step1-how">
           <h2><span class="step-badge">1</span> NotebookLM 怎麼用？</h2>
           <div class="content">
@@ -94,7 +135,27 @@
               <p>一、研究問題<br>二、關鍵發現（每點標明出處）<br>三、比較分析<br>四、建議大綱<br>五、參考資料清單」</p>
             </div>
             <div class="callout callout-green" style="margin-top: 15px;">
-              <p><i class="fa-solid fa-arrow-right"></i> <strong>只要複製這一份</strong>，就是等一下餵給 Claude 的全部素材</p>
+              <p><i class="fa-solid fa-arrow-right"></i> 這份研究筆記就是接下來寫小論文的<strong>全部素材</strong></p>
+            </div>
+          </div>
+        </section>
+
+        <section id="step1-export">
+          <h2><span class="step-badge">1</span> 匯出成 Word 檔</h2>
+          <div class="content">
+            <p>NotebookLM 不適合生成正式文件，但「文獻整合 + 出處標註」很強——把研究筆記匯出，下一步交給 Claude。</p>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 18px;">
+              <div>
+                <p style="margin-bottom: 8px;"><strong>1. 點「儲存到記事」</strong></p>
+                <img src="images/2026-04-28_21-31-30.png" style="width: 100%; border-radius: 6px;">
+              </div>
+              <div>
+                <p style="margin-bottom: 8px;"><strong>2. 工作室 → 匯出至文件</strong></p>
+                <img src="images/2026-04-28_21-34-20.png" style="width: 100%; border-radius: 6px;">
+              </div>
+            </div>
+            <div class="callout callout-green" style="margin-top: 12px;">
+              <p><i class="fa-solid fa-file-word"></i> 拿到一份 .docx Word 檔——下一步就是上傳給 Claude</p>
             </div>
           </div>
         </section>
@@ -109,10 +170,11 @@
 
       <!-- Step 2 -->
       <section id="step2">
-        <h2><span class="step-badge">2</span> Napkin——畫一張圖</h2>
+        <h2><span class="step-badge">2</span> Napkin——畫一張概念結構圖</h2>
         <div class="content">
-          <p>把你的研究重點貼進 <a href="https://www.napkin.ai" target="_blank">Napkin</a>，它會自動生成圖表</p>
-          <div class="callout" style="font-size: 14pt; margin-top: 15px;">
+          <p class="text-xl" style="margin-bottom: 8px;">好的小論文核心不只是文字——是<strong>概念結構</strong></p>
+          <p>把研究筆記裡的五個關鍵因素貼進 <a href="https://www.napkin.ai" target="_blank">Napkin</a>：</p>
+          <div class="callout" style="font-size: 14pt; margin-top: 12px;">
             <p><strong>日本選擇在雲林虎尾設立糖廠的原因：</strong></p>
             <p>1. 天災創造機會：1897 戊戌大水災沖出大量溪埔地<br>
             2. 自然條件適合：雲林平原日照充足、雨量適中<br>
@@ -120,7 +182,10 @@
             4. 企業家眼光：鈴木藤三郎，1906 年設廠<br>
             5. 國家需求：日俄戰爭後需要糖的自給自足</p>
           </div>
-          <p style="margin-top: 12px;"><i class="fa-solid fa-arrow-right text-cyan"></i> 產出的圖放進小論文或簡報</p>
+          <div class="callout callout-green" style="margin-top: 12px;">
+            <p><i class="fa-solid fa-arrow-right"></i> Napkin 生成因果關係圖 → <strong>下載備用</strong>，下一步餵給 Claude</p>
+            <p class="text-muted" style="font-size: 14pt; margin-top: 4px;">論文不只是「寫出來」，而是「想出來」——用圖把結構表達出來</p>
+          </div>
         </div>
       </section>
 
@@ -135,16 +200,18 @@
       <section id="step3-how">
         <h2><span class="step-badge">3</span> Claude——生成 Word</h2>
         <div class="content">
-          <p>打開 <a href="https://claude.ai" target="_blank">claude.ai</a>（免費帳號），依序貼入：</p>
+          <p>打開 <a href="https://claude.ai" target="_blank">claude.ai</a>（免費帳號），依序操作：</p>
           <div style="display: grid; grid-template-columns: 40px 1fr; gap: 10px 15px; margin-top: 15px; align-items: start;">
             <span class="step-badge" style="font-size: 12pt; width: 28px; height: 28px; line-height: 28px;">1</span>
-            <p>小論文<strong>格式規範</strong>（見教學網頁附錄）</p>
+            <p>貼上小論文<strong>格式規範</strong>（見教學網頁附錄）</p>
             <span class="step-badge" style="font-size: 12pt; width: 28px; height: 28px; line-height: 28px;">2</span>
-            <p>Step 1 的<strong>研究筆記</strong>（含出處）</p>
+            <p><i class="fa-solid fa-upload text-cyan"></i> 上傳 Step 1 從 NotebookLM 匯出的 <strong>Word 檔</strong></p>
             <span class="step-badge" style="font-size: 12pt; width: 28px; height: 28px; line-height: 28px;">3</span>
-            <p>指令：「整理成小論文，輸出 Word 檔」</p>
+            <p><i class="fa-solid fa-upload text-cyan"></i> 上傳 Step 2 在 Napkin 做的<strong>因果關係圖</strong></p>
+            <span class="step-badge" style="font-size: 12pt; width: 28px; height: 28px; line-height: 28px;">4</span>
+            <p>指令：「整理成小論文，輸出 Word 檔（含篇名、作者、大綱、引註）」</p>
           </div>
-          <div class="callout callout-orange" style="margin-top: 20px;">
+          <div class="callout callout-orange" style="margin-top: 18px;">
             <p><i class="fa-solid fa-download"></i> Claude 生成 Artifact → 點<strong>「下載」</strong>→ 拿到 .docx</p>
           </div>
         </div>
@@ -182,16 +249,29 @@
 
       <!-- Step 4 slides -->
       <section id="step4-prompt">
-        <h2><span class="step-badge">4</span> 好 prompt vs. 爛 prompt</h2>
+        <h2><span class="step-badge">4</span> Prompt 三招：給角色、給範例、給限制</h2>
         <div class="content">
           <div class="prompt-bad">
             <p><i class="fa-solid fa-xmark" style="color: var(--red);"></i> <strong>爛 prompt：</strong>「幫我寫一段學習歷程反思」</p>
-            <p class="text-muted" style="font-size: 13pt;">→ 罐頭、流水帳</p>
+            <p class="text-muted" style="font-size: 13pt;">→ 罐頭、流水帳，沒有你的影子</p>
           </div>
           <div class="prompt-good" style="margin-top: 5px;">
             <p><i class="fa-solid fa-check" style="color: var(--green);"></i> <strong>好 prompt：</strong></p>
-            <p style="font-size: 14pt;">「我住雲林，常經過虎尾糖廠，以前只覺得是老地方。研究後才知道日本人選雲林不是巧合，是一場水災沖出了空地。幫我用『從不在意到驚訝』的轉變寫反思，像高中生寫的，300字以內。」</p>
-            <p class="text-muted" style="font-size: 13pt;">→ 有你的影子</p>
+            <p style="font-size: 14pt;">「<u>我住雲林，常經過虎尾糖廠，以前只覺得是老地方</u>。研究後才知道日本人選雲林不是巧合，是<u>一場水災沖出了空地</u>。幫我用「從不在意到驚訝」的轉變寫反思，<u>像高中生寫的，300字以內</u>。」</p>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-top: 10px;">
+            <div class="callout callout-blue" style="font-size: 14pt;">
+              <p><strong>1. 角色</strong></p>
+              <p style="font-size: 13pt;">住雲林的高中生</p>
+            </div>
+            <div class="callout callout-orange" style="font-size: 14pt;">
+              <p><strong>2. 範例</strong></p>
+              <p style="font-size: 13pt;">從「不在意」到「驚訝」</p>
+            </div>
+            <div class="callout callout-green" style="font-size: 14pt;">
+              <p><strong>3. 限制</strong></p>
+              <p style="font-size: 13pt;">300 字、高中生口吻</p>
+            </div>
           </div>
           <div class="callout callout-green" style="margin-top: 10px;">
             <p><strong>你給 AI 多少「你的樣子」，它就回給你多少「你的樣子」</strong></p>
@@ -212,7 +292,22 @@
           <div class="callout callout-green" style="font-size: 15pt;">
             <p>「這句話怎麼改更有力？」</p>
           </div>
-          <p style="margin-top: 12px;"><strong>至少來回三輪</strong>，改好後貼回 Word 檔</p>
+          <p style="margin-top: 12px;"><strong>至少來回三輪</strong>。AI 是逼你想清楚的<strong>教練</strong>，不是幫你寫的<strong>槍手</strong>。</p>
+        </div>
+      </section>
+
+      <section id="step4-paste-back">
+        <h2><span class="step-badge">4</span> 改完反思，貼回 Claude 統一風格</h2>
+        <div class="content">
+          <p>反思改好後，回到 Step 3 的 Claude 對話框：</p>
+          <div class="callout callout-blue" style="font-size: 16pt; margin-top: 12px;">
+            <p>「這是我改寫過的反思段落：[貼上]」</p>
+            <p style="margin-top: 8px;">「請把它整合進剛才的小論文，並確保整篇<strong>風格一致</strong>。重新輸出 Word 檔。」</p>
+          </div>
+          <div class="callout callout-green" style="margin-top: 15px;">
+            <p><i class="fa-solid fa-download"></i> 下載最新版 Word——這時候才真正算是「<strong>你的</strong>」學習歷程</p>
+            <p class="text-muted" style="font-size: 14pt; margin-top: 4px;">AI 幫你把思考變清晰，內容是你的</p>
+          </div>
         </div>
       </section>
 
@@ -241,32 +336,120 @@
         </div>
       </section>
 
+      <!-- ============ 進階：AI Agent ============ -->
+      <section id="div-bonus" class="section-divider" data-state="is-section-divider">
+        <p style="font-size: 18pt; letter-spacing: 0.15em;">BONUS</p>
+        <h1 style="font-size: 48pt;"><i class="fa-solid fa-rocket" style="margin-right: 15px;"></i>進階：AI Agent</h1>
+        <p>讓你的學習歷程跟隔壁不一樣</p>
+      </section>
+
+      <section id="bonus-timeline">
+        <h2><i class="fa-solid fa-timeline text-cyan"></i> 互動時間軸網頁</h2>
+        <div class="content">
+          <p>用 <strong>Claude Code</strong> 或 <strong>Gemini CLI</strong>，一句話下指令：</p>
+          <div class="callout callout-blue" style="font-size: 14pt; margin-top: 12px;">
+            <p>「把這份雲林糖業報告做成一個<strong>互動時間軸網站</strong>：1906 大日本製糖設廠 → 1924 日搾量東洋第一 → 1945 戰後台糖接收 → 2000s 轉型文創園區」</p>
+          </div>
+          <p style="margin-top: 12px;">→ AI 自己建檔案 → 寫 HTML/CSS/JS → 跑起來</p>
+          <p>→ 追加：「加一個三題的選擇題小測驗」→ AI 自己改 code</p>
+          <div class="callout callout-green" style="margin-top: 12px;">
+            <p>互動網頁連結放進學習歷程——<strong>審查委員會記得你</strong></p>
+          </div>
+        </div>
+      </section>
+
+      <section id="bonus-cover">
+        <h2><i class="fa-solid fa-image text-orange"></i> 封面視覺</h2>
+        <div class="content">
+          <p>用 <a href="https://ideogram.ai" target="_blank">Ideogram</a> 生成封面圖：</p>
+          <div class="callout callout-orange" style="font-size: 16pt; margin-top: 12px;">
+            <p>「日治時期台灣糖廠，五分車鐵道，甘蔗田，<strong>復古海報風格</strong>」</p>
+          </div>
+          <p style="margin-top: 15px;">Ideogram 特別擅長有<strong>文字標語</strong>的海報</p>
+          <div class="callout callout-red" style="margin-top: 18px;">
+            <p><i class="fa-solid fa-flag text-red"></i> <strong>紅線提醒：</strong>最後一關永遠是你——AI 交成品，<strong>掛名的是你</strong></p>
+          </div>
+        </div>
+      </section>
+
       <!-- ============ DIVIDER: AI原理 ============ -->
       <section id="div-how" class="section-divider" data-state="is-section-divider">
         <h1 style="font-size: 48pt;"><i class="fa-solid fa-brain" style="margin-right: 15px;"></i>AI 怎麼辦到的？</h1>
         <p>揭開黑盒子</p>
       </section>
 
-      <!-- AI = function -->
-      <section id="ai-function">
-        <h2>AI 的本質是「函數」</h2>
-        <div class="content">
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: start;">
-            <div>
-              <p class="text-xl">國中數學學過：</p>
-              <p class="text-xl">輸入 → 規則 → 輸出</p>
-              <p class="text-xl" style="margin-top: 10px;">AI 做的事情<strong>一模一樣</strong></p>
-              <img src="img/04-function-flow.png" style="max-width: 90%; margin-top: 15px; border-radius: 8px;">
+      <!-- AI = function (vertical stack) -->
+      <section>
+        <section id="ai-function">
+          <h2>AI 的本質是「函數」</h2>
+          <div class="content">
+            <p class="text-xl">國中數學學過：輸入一個值 → 經過規則 → 得到輸出</p>
+            <div class="callout callout-blue" style="font-size: 22pt; margin-top: 15px; text-align: center;">
+              <p>華氏溫度 = <strong>1.8</strong> × 攝氏溫度 + <strong>32</strong></p>
             </div>
-            <div>
-              <img src="img/04-digit-prob.png" style="max-width: 100%; border-radius: 8px;">
-              <img src="img/04-catdog-prob.png" style="max-width: 75%; margin-top: 10px; border-radius: 8px;">
+            <p style="margin-top: 15px;">寫成 <strong>y = f(x)</strong>——黑盒子裡有兩個參數（1.8、32），輸入攝氏，算出華氏。</p>
+            <div class="callout callout-green" style="margin-top: 15px;">
+              <p>AI 做的事情<strong>一模一樣</strong>——只是函數複雜得多</p>
             </div>
           </div>
-          <div class="callout callout-green" style="margin-top: 15px;">
-            <p>不管多厲害，骨子裡都是：<strong>輸入 → 函數 → 輸出</strong></p>
+        </section>
+
+        <section id="ai-function-yang">
+          <h2>例子 1：學測落點預測</h2>
+          <div class="content">
+            <div style="display: grid; grid-template-columns: 1.1fr 1fr; gap: 25px; align-items: center;">
+              <div>
+                <p>輸入：學測成績</p>
+                <p>輸出：可能錄取的大學機率</p>
+                <div class="callout callout-orange" style="font-size: 14pt; margin-top: 12px;">
+                  <p>f(x) = 國文 × 0.3 + 英文 × 0.25</p>
+                  <p>　　　 + 數學 × 0.35 + 社會 × 0.05</p>
+                  <p>　　　 + 自然 × 0.05</p>
+                </div>
+                <p class="text-muted" style="font-size: 14pt; margin-top: 8px;">實際更複雜（志願、歷年分布…），但原理一樣</p>
+              </div>
+              <div>
+                <img src="images/2026-04-29_11-28-33.png" style="max-width: 100%; border-radius: 8px;">
+              </div>
+            </div>
+            <div class="callout callout-green" style="margin-top: 12px;">
+              <p>原理：<strong>輸入 → 函數 → 輸出</strong></p>
+            </div>
           </div>
-        </div>
+        </section>
+
+        <section id="ai-function-digit">
+          <h2>例子 2：手寫數字辨識</h2>
+          <div class="content">
+            <p>輸入 <strong>28×28</strong> 個小數（每個像素的亮度），輸出 0–9 的機率：</p>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 12px; align-items: center;">
+              <img src="images/04-digit5-pixels.png" style="max-width: 100%; border-radius: 8px; background: white; padding: 6px;">
+              <img src="images/04-digit5-prob.png" style="max-width: 100%; border-radius: 8px; background: white; padding: 6px;">
+            </div>
+            <div class="callout callout-blue" style="margin-top: 12px;">
+              <p>AI 看到的不是「5」，是<strong>一堆數字</strong>；它輸出的也不是「答案」，是<strong>一堆機率</strong></p>
+            </div>
+          </div>
+        </section>
+
+        <section id="ai-function-summary">
+          <h2>AI 能做什麼？都是函數</h2>
+          <div class="content">
+            <table>
+              <thead><tr><th>任務</th><th>輸入</th><th>→ f →</th><th>輸出</th></tr></thead>
+              <tbody>
+                <tr><td>手寫辨識</td><td>一張圖片</td><td>→ f →</td><td>0–9 各數字的機率</td></tr>
+                <tr><td>貓狗辨識</td><td>一張照片</td><td>→ f →</td><td>貓 90%、狗 10%</td></tr>
+                <tr><td>文字生成</td><td>一段提示詞</td><td>→ f →</td><td>生成的文字</td></tr>
+                <tr><td>影像生成</td><td>一段描述</td><td>→ f →</td><td>生成的圖片</td></tr>
+              </tbody>
+            </table>
+            <div class="callout callout-green" style="margin-top: 15px;">
+              <p>不管多厲害，骨子裡都是：<strong>輸入 → 函數 → 輸出</strong></p>
+              <p class="text-muted" style="font-size: 14pt; margin-top: 4px;">差別只在於函數裡有幾千億個參數（GPT-4 超過一兆）</p>
+            </div>
+          </div>
+        </section>
       </section>
 
       <!-- AI = word chain function (vertical stack) -->
@@ -417,12 +600,18 @@
       <section id="results">
         <h2>你現在手上有什麼？</h2>
         <div class="content">
-          <div style="display: grid; grid-template-columns: 50px 1fr 1fr; gap: 12px 20px; margin-top: 15px; align-items: center;">
-            <span class="step-badge">1</span><p><strong>研究筆記</strong>（含出處）</p><p class="text-muted">NotebookLM</p>
-            <span class="step-badge">2</span><p><strong>因果關係圖</strong></p><p class="text-muted">Napkin</p>
-            <span class="step-badge">3</span><p><strong>小論文 Word 檔</strong></p><p class="text-muted">Claude</p>
-            <span class="step-badge">4</span><p><strong>反思定稿</strong>（貼回 Word）</p><p class="text-muted">ChatGPT</p>
-            <span class="step-badge">5</span><p><strong>報告簡報</strong></p><p class="text-muted">Gamma</p>
+          <table style="font-size: 18pt;">
+            <thead><tr><th>階段</th><th>成品</th></tr></thead>
+            <tbody>
+              <tr><td><strong>讀</strong></td><td>NotebookLM 研究筆記（Word 匯出）</td></tr>
+              <tr><td><strong>做</strong></td><td>Napkin 因果關係圖 + Claude 小論文 Word 初稿</td></tr>
+              <tr><td><strong>學</strong></td><td>來回三輪改出來的反思，更新進 Word 完成定稿</td></tr>
+              <tr><td><strong>簡報</strong></td><td>Gamma 或 Claude 生成的報告簡報</td></tr>
+              <tr><td><strong>創造</strong></td><td>（加分）互動時間軸網頁 + Ideogram 封面圖</td></tr>
+            </tbody>
+          </table>
+          <div class="callout callout-green" style="margin-top: 15px;">
+            <p>三小時前你還在煩惱學習歷程，現在你手上有 <strong>Word + 簡報</strong>，可能還有<strong>互動網頁</strong></p>
           </div>
         </div>
       </section>
