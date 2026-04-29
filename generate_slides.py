@@ -138,13 +138,15 @@ def title_slide():
     add_text(slide, Inches(0), Inches(4.5), SLIDE_W, Inches(0.5),
              "顏永進  ｜  2026.04.30  ｜  雲林", size=20,
              color=SUBTITLE_GRAY, align=PP_ALIGN.CENTER)
-    for x, label, url in [
-        (Inches(3.5), "簡報", "is.gd/1rLH3E"),
-        (Inches(7.8), "教學網頁", "is.gd/tENFQN"),
+    for x, label, url, qr_path in [
+        (Inches(3.5), "簡報", "is.gd/1rLH3E", "img/qr-slides.png"),
+        (Inches(7.8), "教學網頁", "is.gd/tENFQN", "img/qr-index.png"),
     ]:
-        add_rect(slide, x, Inches(5.4), Inches(1.5), Inches(1.5), CARD_BG)
-        add_text(slide, x, Inches(6.0), Inches(1.5), Inches(0.4),
-                 "QR", size=18, color=SUBTITLE_GRAY, align=PP_ALIGN.CENTER)
+        add_rect(slide, x, Inches(5.4), Inches(1.5), Inches(1.5), WHITE)
+        if os.path.exists(qr_path):
+            slide.shapes.add_picture(
+                qr_path, x + Inches(0.05), Inches(5.45),
+                width=Inches(1.4), height=Inches(1.4))
         add_text(slide, x, Inches(7.0), Inches(1.5), Inches(0.3),
                  label, size=14, color=LIGHT_GRAY, align=PP_ALIGN.CENTER)
         add_text(slide, x + Inches(1.6), Inches(5.7), Inches(2.5), Inches(0.4),
