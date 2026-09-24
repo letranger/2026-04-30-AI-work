@@ -1,11 +1,15 @@
 #+title: 和 AI 作朋友——高中生的 AI 工具箱
-#+AUTHOR: 臺南一中 顏永進
+#+AUTHOR: 顏永進
 #+DATE: 2026-04-30
-#+SUBTITLE: 雲林場高中生 AI 工作坊
+#+SUBTITLE: 雲林場高中生 AI 工作坊 / 顏永進
 #+OPTIONS: toc:2 ^:nil num:5
 #+OPTIONS: H:4
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/letranger/css@main/muse.css" />
 #+HTML_HEAD_EXTRA: <script src="https://cdn.jsdelivr.net/gh/letranger/css@main/copy_code.js"></script>
+#+begin_export html
+<a href="https://hits.sh/letranger.github.io/working/2026-04-30雲林-和AI作朋友/index.html/"><img align="right" alt="Hits" src="https://hits.sh/letranger.github.io/working/2026-04-30雲林-和AI作朋友/index.html.svg"/></a>
+#+end_export
+
 
 * 今天要做什麼？
 
